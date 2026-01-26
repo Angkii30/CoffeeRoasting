@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #faf8f2;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #efe6d8;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 5px;
+}
+
+.sidebar li {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background: #d3b38c;
+  padding: 10px;
+}
+
+/* Main */
+.main {
+  flex: 1;
+}
+
+.topbar {
+  height: 50px;
+  background: #9b6b3f;
+}
+
+.content {
+  padding: 20px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+   padding: 8px;
+}
+
+.toolbar-right {
+  margin-left: auto;          
+  display: flex;
+  align-items: center;
+  gap: 10px;                  
+}
+
+.toolbar-right input {
+  width: 260px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #caa57a;
+}
+
+.toolbar-center input {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #caa57a;
+}
+
+.year-select,
+.month-select {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #D2B394;
+  background-color: #caa57a;
+  cursor: pointer;
+}
+
+/* ปุ่ม */
+.btn {
+  background: #caa57a;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Table */
+table {
+  width: 100%;
+  padding: 8px;
+  border-collapse: collapse;
+  background: #f3eee4;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  vertical-align: middle;
+}
+
+th {
+  background: #d8b999;
+}

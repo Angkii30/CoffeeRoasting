@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Coffee Roasting</h2>
+      <ul>
+        <li>หน้าแรก</li>
+        <li>คลังสินค้า</li>
+        <li class="active">ลูกค้า</li>
+        <li>จัดการสิทธิ์</li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <header class="topbar"></header>
+
+      <section class="content">
+        <div class="toolbar">
+          <button class="btn">+ เพิ่มลูกค้า</button>
+
+          <div class="toolbar-right">
+            <input type="text" placeholder="ค้นหา รหัสลูกค้า, ชื่อ, หรือจังหวัด">
+
+            <!-- เลือกปี -->
+            <select class="year-select">
+              <option value="">ทุกปี</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+            </select>
+
+            <!-- เลือกเดือน -->
+            <select class="month-select">
+              <option value="">ทุกเดือน</option>
+              <option value="01">มกราคม</option>
+              <option value="02">กุมภาพันธ์</option>
+              <option value="03">มีนาคม</option>
+              <option value="04">เมษายน</option>
+              <option value="05">พฤษภาคม</option>
+              <option value="06">มิถุนายน</option>
+              <option value="07">กรกฎาคม</option>
+              <option value="08">สิงหาคม</option>
+              <option value="09">กันยายน</option>
+              <option value="10">ตุลาคม</option>
+              <option value="11">พฤศจิกายน</option>
+              <option value="12">ธันวาคม</option>
+            </select>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>รหัสลูกค้า</th>
+              <th>ชื่อลูกค้า</th>
+              <th>จังหวัด</th>
+              <th>จำนวนครั้งที่เคยซื้อ</th>
+              <th>เบอร์โทรติดต่อ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>C001</td>
+              <td>สมชาย ใจดี</td>
+              <td>พะเยา</td>
+              <td>5</td>
+              <td>081-234-5678</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+  </div>
+</body>
+</html>
