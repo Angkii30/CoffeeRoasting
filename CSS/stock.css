@@ -40,11 +40,7 @@ body {
 }
 
 
-.menu {
-    list-style: none;
-}
-
-.menu li {
+.menu-item {
     padding: 12px;
     margin-bottom: 10px;
     border-radius: 8px;
@@ -52,9 +48,22 @@ body {
     cursor: pointer;
 }
 
-.menu li.active,
-.menu li:hover {
-    background-color: #D8C2A3;
+.menu-item:hover,
+.menu-item.active {
+    background-color: #d3b38c;
+}
+/* ใส่ ไอคอน */
+/* .menu-icon {
+    width: 35px;
+    height: 35px;
+    background-color: #6B4423;
+    border-radius: 50%;
+} */
+
+.menu-text {
+    color: #65453A;
+    font-weight: 700;
+    font-size: 18px;
 }
 
 /* Main */
