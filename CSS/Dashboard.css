@@ -9,9 +9,6 @@
             box-sizing: border-box;
 
         }
-
-
-
         body {
 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,27 +16,18 @@
             background-color: #EDE8E1;
 
         }
-
-
-
         /* Header */
 
         .header {
 
-            background-color: #8B6F47;
-
+            background-color: #71481f;
             padding: 15px 30px;
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
+            img
 
         }
-
-
-
         .header-left {
 
             display: flex;
@@ -49,65 +37,36 @@
             gap: 15px;
 
         }
+        .header img {
 
-
-
-        .logo-small {
-
-            width: 50px;
-
-            height: 50px;
-
-            background-color: #3D2817;
-
-            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
 
         }
-
-
-
         .header-title {
 
             background-color: #C4A77D;
-
             padding: 8px 25px;
-
             border-radius: 25px;
-
             color: #3D2817;
-
             font-weight: 600;
 
         }
-
-
-
         .user-icon {
-
             width: 45px;
-
             height: 45px;
-
             background-color: #3D2817;
-
             border-radius: 50%;
-
             cursor: pointer;
-
             transition: all 0.3s ease;
-
         }
-
-
 
         .user-icon:hover {
 
             background-color: #6B4423;
 
         }
-
-
-
         /* Layout */
 
         .container {
@@ -115,95 +74,52 @@
             display: flex;
 
         }
-
-
-
         /* Sidebar */
-
         .sidebar {
 
             width: 250px;
-
             background-color: #EDE8E1;
-
             border-right: 2px solid #C4A77D;
-
             min-height: calc(100vh - 80px);
-
             padding: 20px;
 
         }
-
-
-
         .menu-item {
-
             display: flex;
-
             align-items: center;
-
             gap: 12px;
-
             padding: 15px 20px;
-
             background-color: #C4A77D;
-
             border-radius: 12px;
-
             margin-bottom: 10px;
-
             cursor: pointer;
-
             transition: all 0.3s ease;
 
         }
-
-
-
         .menu-item:hover {
 
             background-color: #8B6F47;
 
         }
-
-
-
         .menu-item.active {
 
             background-color: #8B6F47;
 
         }
-
-
-
         .menu-icon {
 
             width: 35px;
-
             height: 35px;
-
             background-color: #6B4423;
-
             border-radius: 50%;
-
         }
-
-
-
         .menu-text {
-
             color: #3D2817;
-
             font-weight: 600;
-
             font-size: 14px;
-
         }
-
-
 
         /* Main Content */
-
         .main-content {
 
             flex: 1;
