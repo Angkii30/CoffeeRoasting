@@ -18,70 +18,64 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 220px;
-    background-color: #EFE7DA;
-    padding: 20px;
+  width: 220px;
+  background: #EDE8E1;
+  /* color: #9b6b3f; */
+  padding: 20px;
 }
 
-.sidebar img{
-    margin: 0;
-    padding: 0;
-    width: 70px;
-    height: 50px;
-    object-fit: contain;
-    gap: 0;
+.sidebar h2 {
+    color: rgb(107, 78, 46);
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  height: 28px;
+  margin-block-end: 30px;
+  margin-block-start: 19.90625px;
+  margin-bottom: 30px;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  width: 220px;
 }
 
-.logo {
-    gap: 0;
-    margin-bottom: 30px;
-    color: #6B4E2E;
-    font-size: 18px;
-}
-
-
-.menu-item {
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    color: #6B4E2E;
+.sidebar ul {
+  list-style: none;
     cursor: pointer;
 }
 
-.menu-item:hover,
-.menu-item.active {
-    background-color: #d3b38c;
+.sidebar li {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: rgb(107, 78, 46);
 }
-/* ใส่ ไอคอน */
-/* .menu-icon {
-    width: 35px;
-    height: 35px;
-    background-color: #6B4423;
-    border-radius: 50%;
-} */
 
-.menu-text {
-    color: #65453A;
-    font-weight: 700;
-    font-size: 18px;
+.sidebar li:hover,
+.sidebar li.active {
+  background: #C6B099;
 }
 
 /* Main */
 .main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
 }
 
 /* Topbar */
 .topbar {
-    height: 60px;
-    background-color: #8B6F47;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 20px;
-    color: white;
+  height: 60px;
+  background: #9b6b3f;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-icon {
+  width: 36px;
+  height: 36px;
+  background: #ccc;
+  border-radius: 50%;
 }
 
 /* Content */

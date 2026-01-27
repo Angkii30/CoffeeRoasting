@@ -2,7 +2,8 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>แก้ไขรายการสั่งซื้อ</title>
+    <title>Coffee Roasting</title>
+    <link rel="icon" href="Picture/logo.png">
 </head>
 <body>
 
@@ -107,10 +108,15 @@
                 <input type="number" value="250">
             </div>
         </div>
-        <div class="actions">
-            <button type="button" class="btn cancel">ยกเลิก</button>
-            <button type="submit" class="btn save">บันทึก</button>
-        </div>
+    <button type="reset" class="btn cancle" onclick="history.back()">ยกเลิก</button>
+    <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
+
+    <script>
+        function savedata() {
+            alert("บันทึกข้อมูลเรียบร้อย");
+             history.back();
+        }
+    </script>
 
     </form>
 </main>
