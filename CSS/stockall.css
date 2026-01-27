@@ -1,10 +1,15 @@
+<style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
+body {
+    margin: 0;
+    background: #FAF6EF;
+}
 /* Layout */
 .layout {
   display: flex;
@@ -13,14 +18,24 @@
 
 /* Sidebar */
 .sidebar {
-  width: 240px;
-  background: #efe6d8;
-  color: #9b6b3f;
+  width: 220px;
+  background: #EDE8E1;
+  /* color: #9b6b3f; */
   padding: 20px;
 }
 
 .sidebar h2 {
-  margin-bottom: 20px;
+    color: rgb(107, 78, 46);
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  height: 28px;
+  margin-block-end: 30px;
+  margin-block-start: 19.90625px;
+  margin-bottom: 30px;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  width: 220px;
 }
 
 .sidebar ul {
@@ -30,18 +45,19 @@
 
 .sidebar li {
   padding: 12px;
-  border-radius: 6px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: rgb(107, 78, 46);
 }
 
 .sidebar li:hover,
 .sidebar li.active {
-  background: #d3b38c;
+  background: #C6B099;
 }
 
 /* Main */
 .main {
   flex: 1;
-  background: #f5f5f5;
 }
 
 /* Topbar */
@@ -88,12 +104,6 @@
   color: #65453A;
   width: 100%;
   max-width: 250px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.stock-card:hover {
-  transform: scale(1.05);
 }
 
 .stock-card h2 {
@@ -107,3 +117,5 @@
   font-weight: bold;
   margin-top: 10px;
 }
+
+</style>

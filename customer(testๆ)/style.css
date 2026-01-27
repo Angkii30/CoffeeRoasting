@@ -1,11 +1,27 @@
+<style>
 * {
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+h2 {
+    color: rgb(107, 78, 46);
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  height: 28px;
+  margin-block-end: 30px;
+  margin-block-start: 19.90625px;
+  margin-bottom: 30px;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  width: 220px;
 }
 
 body {
   margin: 0;
-  background: #faf8f2;
+  background: #FAF6EF;
 }
 
 .layout {
@@ -16,7 +32,7 @@ body {
 /* Sidebar */
 .sidebar {
   width: 220px;
-  background: #efe6d8;
+  background: #EDE8E1;
   padding: 20px;
 }
 
@@ -26,21 +42,21 @@ body {
 
 .sidebar ul {
   list-style: none;
-  padding: 10px;
+  /* padding: 10px; */
+  color: rgb(107, 78, 46);
 }
 
 .sidebar li {
-  padding: 10px;
-  border-radius: 5px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
-  align-items: center;
 }
 
 .sidebar li.active,
 .sidebar li:hover {
-  background: #d3b38c;
-  padding: 10px;
+  background: #C6B099;
 }
 
 /* Main */
@@ -49,7 +65,7 @@ body {
 }
 
 .topbar {
-  height: 50px;
+  height: 60px;
   background: #9b6b3f;
 }
 
@@ -61,13 +77,15 @@ body {
   display: flex;
   align-items: center;
    padding: 8px;
+   color: rgb(107, 78, 46);
 }
 
 .toolbar-right {
   margin-left: auto;          
   display: flex;
   align-items: center;
-  gap: 10px;                  
+  gap: 10px;
+  color: rgb(107, 78, 46);                 
 }
 
 .toolbar-right input {
@@ -75,6 +93,7 @@ body {
   padding: 8px 16px;
   border-radius: 20px;
   border: 1px solid #caa57a;
+  color: rgb(107, 78, 46);
 }
 
 .toolbar-center input {
@@ -91,6 +110,7 @@ body {
   border: 1px solid #D2B394;
   background-color: #caa57a;
   cursor: pointer;
+  color: rgb(107, 78, 46);
 }
 
 /* ปุ่ม */
@@ -100,6 +120,7 @@ body {
   padding: 8px 16px;
   border-radius: 20px;
   cursor: pointer;
+  color: rgb(107, 78, 46);
 }
 
 /* Table */
@@ -110,6 +131,7 @@ table {
   background: #f3eee4;
   border-radius: 10px;
   overflow: hidden;
+  color: rgb(107, 78, 46);
 }
 
 th, td {
@@ -118,8 +140,11 @@ th, td {
   border-bottom: 1px solid #ddd;
   text-align: center;
   vertical-align: middle;
+  color: rgb(107, 78, 46);
 }
 
 th {
   background: #d8b999;
 }
+
+</style>
