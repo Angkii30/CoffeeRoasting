@@ -191,19 +191,4 @@ th {
     object-fit: contain;
 }
 
-.pagination{
-    margin-top: 30px;
-    text-align: right;
-    color: #65453A;
-}
-
-.btn-one{
-    background: #caa57a;
-    border: none;
-    padding: 5px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    color: #65453A;
-    font-size: 16px;
-}
 
