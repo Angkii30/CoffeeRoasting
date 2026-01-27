@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Roasting</title>
+    <link rel="icon" href="Picture/logo.png">
+</head>
+<body>
+    <main class="main">
+        <header class="topbar"></header>
+
+            <form action="add_stock.html">
+                <label for="">เลือกรายการคลัง : </label>
+                <select class="select-stock">
+                    <option value="">คลิกเพื่อเลือก</option>
+                    <option value="cherry">คลังเมล็ดกาแฟเชอร์รี่</option>
+                    <option value="kala">คลังเมล็ดกาแฟกะลา</option>
+                    <option value="san">คลังเมล็ดกาแฟสาร</option>
+                    <option value="roast">คลังเมล็ดกาแฟคั่ว</option>
+                </select> <br>
+                
+                <label for="">สายพันธุ์ : </label>
+                <input type="radio" name="gene" id="gene" value="0"> อราบิก้า
+                <input type="radio" name="gene" id="gene" value="1"> โรบัสต้า         <br>
+
+                <label for="">ปริมาณ(กิโลกรัม) : </label>
+                <input type="number" name="" id=""> <br>
+
+                <label for="">กระบวนการ : </label>
+                <select class="select-process">
+                    <option value="">คลิกเพื่อเลือก</option>
+                    <option value="washed">Washed Process</option>
+                    <option value="honey">Honey Process</option>
+                    <option value="dry">Dry Process</option>
+                </select> <br>
+
+                <label for="">ระดับการคั่ว : </label>
+                <select class="select-roast">
+                    <option value="">คลิกเพื่อเลือก</option>
+                    <option value="light">คั่วอ่อน</option>
+                    <option value="medium">คั่วกลาง</option>
+                    <option value="mediumplus">คั่วกลาง +</option>
+                    <option value="mediumdark">คั่วกลางเข้ม</option>
+                    <option value="dark">คั่วเข้ม</option>
+                </select> <br>
+
+                <label for="">วันที่รับเข้า : </label>
+                <input type="date"> <br>
+
+                <label for="">แหล่งที่มา : </label>
+                <input type="text" name="source" id="source">
+                <!-- <textarea name="source" id="source"></textarea> --> <br>
+            
+                <label for="">ผู้รับผิดชอบ : </label>
+                <input type="text" name="person" id="person"> <br>
+
+                <label for="">หมายเหตุ : </label>
+                <!-- <input type="text" name="source" id="source"> -->
+                <textarea name="note" id="note"></textarea> 
+            </form>
+
+            <button type="reset" class="btn cancle" onclick="history.back()">ยกเลิก</button>
+            <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
+
+            <script>
+            function savedata() {
+                alert("บันทึกข้อมูลเรียบร้อย");
+                history.back();
+            }
+            </script>
+    </main>
+
+</body>
+</html>
