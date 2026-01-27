@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Coffee Roasting System</title>
+    <!-- <link rel="stylesheet" href="../CSS/Dashboard.css"> -->
+    <link rel="icon" href="Picture/mainlogo.png">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Coffee Roasting</h2>
+        <ul>
+            <li onclick="window.location.href='../HTML/Dashboard.html'">หน้าแรก</li>
+            <li onclick="window.location.href='../HTML/stock.html'">คลังสินค้า</li>
+            <li class="active">ลูกค้า</li>
+            <li>จัดการสิทธิ์</li>
+        </ul>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+        <header class="topbar">
+            <div class="user-icon" onclick="alert('เมนูผู้ใช้')"></div>
+        </header>
+
+        <!-- Content -->
+        <section class="content">
+
+            <!-- Stat cards -->
+            <div class="cards">
+                <div class="card">
+                    <p>Beans</p>
+                    <h3>180 KG</h3>
+                </div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+
+            <!-- Panels -->
+            <div class="panels">
+                <div class="panel large"></div>
+                <div class="panel large"></div>
+            </div>
+
+            <div class="panels">
+                <div class="panel wide"></div>
+                <div class="panel tall"></div>
+            </div>
+
+        </section>
+    </main>
+
+</div>
+
+</body>
+</html>

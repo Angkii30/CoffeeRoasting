@@ -21,12 +21,12 @@ body {
 }
 
 .sidebar h2 {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .sidebar ul {
   list-style: none;
-  padding: 5px;
+  padding: 10px;
 }
 
 .sidebar li {
