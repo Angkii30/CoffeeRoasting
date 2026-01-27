@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #FAF6EF;
+}
+
+/* Layout */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background-color: #EFE7DA;
+    padding: 20px;
+}
+
+.sidebar img{
+    margin: 0;
+    padding: 0;
+    width: 70px;
+    height: 50px;
+    object-fit: contain;
+    gap: 0;
+}
+
+.logo {
+    gap: 0;
+    margin-bottom: 30px;
+    color: #6B4E2E;
+    font-size: 18px;
+}
+
+
+.menu-item {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    color: #6B4E2E;
+    cursor: pointer;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background-color: #d3b38c;
+}
+/* ใส่ ไอคอน */
+/* .menu-icon {
+    width: 35px;
+    height: 35px;
+    background-color: #6B4423;
+    border-radius: 50%;
+} */
+
+.menu-text {
+    color: #65453A;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* Main */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Topbar */
+.topbar {
+    height: 60px;
+    background-color: #8B6F47;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+}
+
+/* Content */
+.content {
+    padding: 20px;
+}
+
+.main h1{
+    font-size: 48px;
+    color: #906A43;
+    margin: 30px 0px 0px 30px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+   padding: 8px;
+}
+
+.toolbar-right {
+  margin-left: auto;          
+  display: flex;
+  align-items: center;
+  gap: 10px;                  
+}
+
+.toolbar-right input {
+  width: 260px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #caa57a;
+  font-size: 20px
+}
+
+.toolbar-center input {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #caa57a;
+  color: #65453A;
+  font-size: 20px
+}
+
+.year-select,
+.month-select {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #D2B394;
+  background-color: #caa57a;
+  cursor: pointer;
+  color: #65453A;
+  font-size: 20px
+}
+
+/* ปุ่ม */
+.btn {
+  background: #caa57a;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #65453A;
+  font-size: 20px;
+}
+
+/* Table */
+table {
+    margin-top: 30px;
+    width: 100%;
+    padding: 8px;
+    border-collapse: collapse;
+    background: #f3eee4;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  vertical-align: middle;
+  color: #65453A;
+  font-size: 20px;
+}
+
+th {
+  background: #d8b999;
+  color: #65453A;
+  font-size: 24px;
+}
+
+.action-col {
+    text-align: right;
+    padding-right: 12px;
+}
+
+.edit {
+    width: 70px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.delete {
+    width: 70px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.pagination{
+    margin-top: 30px;
+    text-align: right;
+    color: #65453A;
+}
+
+.btn-one{
+    background: #caa57a;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #65453A;
+    font-size: 16px;
+}
+

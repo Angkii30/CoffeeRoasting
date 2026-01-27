@@ -5,24 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Roasting</title>
     <link rel="icon" href="Picture/logo.png">
+    <link rel="stylesheet" href="../CSS/stock.css">
 
 </head>
 <body>
 
-    <div class="Header">
+    <!-- <div class="Header">
         <img class="user-icon" src="">
 
-    </div>
+    </div> -->
+    <div class="layout">
+
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="Picture/mainlogo.png" alt="Coffee">
+            <span>Coffee Roasting</span>
 
    <div class="layout">
         <div class="sidebar">
 
-            <div class="menu-item" onclick="window.location.href='Dashboard.html'">
+            <div class="menu-item" onclick="window.location.href='../แดชบอร์ดลองโล้ะ/index.html'">
                 <div class="menu-icon"></div>
                 <div class="menu-text">หน้าแรก</div>
             </div>
 
-            <div class="menu-item active">
+            <div class="menu-item active" onclick="window.location.href='stockall.html'">
                 <div class="menu-icon"></div>
                 <div class="menu-text">คลังสินค้า</div>
             </div>
@@ -38,13 +45,27 @@
             </div>
         </div>
 
+        <!-- <img src="Picture/mainlogo.png" class="mainlogo">
+        <h2 class="logo">Coffee Roasting</h2> -->
+        <!-- <ul class="menu">
+            <li class="active">Dashboard</li>
+            <li>คลังสินค้า</li>
+            <li>ลูกค้า</li>
+            <li>รายงาน</li>
+            <li>ตั้งค่า</li>
+        </ul> -->
+    </aside>
+
     <main class="main">
-        <header class="topbar"></header>
+         <header class="topbar">
+            <div class="profile">👤</div>
+        </header>
+
         <h1 class="page-title">คลังเมล็ดกาแฟเชอร์รี่</h1>
 
         <section class="content">
             <div class="toolbar">
-            <button class="btn" onclick="window.location.href='add.html'">+ เพิ่มรายการ</button>
+            <button class="btn" onclick="window.location.href='add_stock.html'">+ เพิ่มรายการ</button>
 
                 <div class="toolbar-right">
                     <input type="text" placeholder="ค้นหารายการ">
@@ -61,7 +82,7 @@
                         <th>วันที่รับเข้า</th>
                         <th>แหล่งที่มา</th>
                         <th>ผู้รับผิดชอบ</th>
-                        <th>&nbsp;</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,24 +94,25 @@
                     <td>ลุง</td>
                     <td class="action-col">
                         <a href="">
-                            <img src="Picture/edit.png" alt="แก้ไข" class="icon">
+                            <img src="Picture/edit.png" alt="แก้ไข" class="edit">
                         </a>
-                            <img src="Picture/delete.png" alt="ลบ" class="icon" onclick="">
+                            <img src="Picture/delete.png" alt="ลบ" class="delete" onclick="">
                     </td>
                    </tr>
                 </tbody>
             </table>
 
             <div class="pagination">
-                <button>หน้าแรก</button>
-                <button>ก่อนหน้า</button>
+                <button class="btn-one">หน้าแรก</button>
+                <button class="btn-one">ก่อนหน้า</button>
                 <span>หน้า 1 / 4</span>
-                <button onclick="window.location.href='stockkala.html'">ถัดไป</button>
-                <button onclick="window.location.href='stockroast.html'">สุดท้าย</button>
+                <button class="btn-one" onclick="window.location.href='stockkala.html'">ถัดไป</button>
+                <button class="btn-one"onclick="window.location.href='stockroast.html'">สุดท้าย</button>
             </div>
 
         </section>
     </main>
+    </div>
     
 </body>
 </html>
