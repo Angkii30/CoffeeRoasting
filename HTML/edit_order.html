@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>แก้ไขรายการสั่งซื้อ</title>
+</head>
+<body>
+
+<!-- Topbar -->
+<header class="topbar">
+    <h2>Coffee Roasting</h2>
+    <div class="user"></div>
+</header>
+
+<main class="container">
+    <h1>แก้ไขรายการสั่งซื้อ</h1>
+
+    <form class="order-form">
+
+        <!-- แถวบน -->
+        <div class="row header-row">
+            <div>
+                <label>รหัสลูกค้า:</label>
+                <input type="text" value="12345">
+            </div>
+            <div>
+                <label>สถานะ:</label>
+                <select>
+                    <option>รอดำเนินการ</option>
+                    <option>กำลังดำเนินการ</option>
+                    <option>เสร็จสิ้น</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <label>ชื่อ:</label>
+                <input type="text" value="สุดสวย">
+            </div>
+            <div>
+                <label>นามสกุล:</label>
+                <input type="text" value="ชอบกาแฟ">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="full">
+                <label>ที่อยู่:</label>
+                <textarea>12/1 ม.1
+ต.แม่กา อ.เมืองพะเยา 56000</textarea>
+            </div>
+            <div>
+                <label>จังหวัด:</label>
+                <select>
+                    <option>พะเยา</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <label>เบอร์โทรติดต่อ:</label>
+                <input type="text" value="0990990999">
+            </div>
+            <div>
+                <label>อีเมล:</label>
+                <input type="email" value="Coffee@gmail.com">
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <label>กระบวนการ:</label>
+                <select>
+                    <option>Washed process</option>
+                    <option>Honey process</option>
+                    <option>Dry process</option>
+                </select>
+            </div>
+            <div>
+                <label>ระดับการคั่ว:</label>
+                <select>
+                    <option>คั่วอ่อน</option>
+                    <option>คั่วกลาง</option>
+                    <option>คั่วกลาง+</option>
+                    <option>คั่วกลางเข้ม</option>
+                    <option>คั่วเข้ม</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <label>ปริมาณ:</label>
+                <select>
+                    <option>500 กรัม</option>
+                    <option>1 กิโลกรัม</option>
+                </select>
+            </div>
+            <div>
+                <label>จำนวน:</label>
+                <input type="number" value="1">
+            </div>
+            <div>
+                <label>ราคา:</label>
+                <input type="number" value="250">
+            </div>
+        </div>
+        <div class="actions">
+            <button type="button" class="btn cancel">ยกเลิก</button>
+            <button type="submit" class="btn save">บันทึก</button>
+        </div>
+
+    </form>
+</main>
+
+</body>
+</html>
