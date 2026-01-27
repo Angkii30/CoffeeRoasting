@@ -1,3 +1,4 @@
+<style>
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +19,7 @@ body {
 /* Sidebar */
 .sidebar {
     width: 220px;
-    background-color: #EFE7DA;
+    background-color: #EDE8E1;
     padding: 20px;
 }
 
@@ -41,7 +42,7 @@ body {
 
 .menu li.active,
 .menu li:hover {
-    background-color: #D8C2A3;
+    background-color: #C6B099;
 }
 
 /* Main */
@@ -54,7 +55,7 @@ body {
 /* Topbar */
 .topbar {
     height: 60px;
-    background-color: #8B6F47;
+    background-color: #9b6b3f;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -108,3 +109,5 @@ body {
 .panel.tall {
     min-height: 260px;
 }
+
+</style>
