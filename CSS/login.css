@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #f3ecdf; /* สีครีม */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+}
+
+.logo img {
+    width: 100px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #4a2f1b;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 12px 14px;
+    border-radius: 6px;
+    border: 1px solid #b9a48c;
+    font-size: 14px;
+}
+
+input::placeholder {
+    color: #9c8b76;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #8b5a2b;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #754a23;
+}
+
+.links {
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.links a {
+    display: block;
+    color: #6b4a2f;
+    text-decoration: none;
+    margin-top: 6px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
