@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Roasting</title>
-    <link rel="icon" href="Picture/logo.png">
-    <link rel="icon" href="Picture/logo.png">
+    <link rel="icon" href="logo.png">
 </head>
 <body>
     <h3>Sign in to Coffee Roasting</h3>
@@ -14,6 +13,22 @@
     <input type="text" id="password" placeholder="Password"> <br>
 
     <button onclick="login()">Sign in</button>
+
+    <p id="error" style="color:red;"></p>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      if (user === "admin" && pass === "1234") {
+        // เปลี่ยนหน้า
+        window.location.href = "../แดชบอร์ดลองโล้ะ/index.html";
+      } else {
+        document.getElementById("error").innerText = "Username หรือ Password ไม่ถูกต้อง";
+      }
+    }
+  </script>
 
 </body>
 </html>

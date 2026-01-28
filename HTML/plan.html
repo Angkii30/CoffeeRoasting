@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Roasting</title>
     <link rel="icon" href="Picture/logo.png">
+    <link rel="stylesheet" href="../CSS/stock.css">
 
 </head>
 <body>
-
+<!-- 
     <div class="Header">
         <img class="user-icon" src="">
 
@@ -56,7 +57,33 @@
 
                     <input type="date"> 
                 </div>
-            </div>
+            </div> -->
+
+    <div class="layout">
+    <aside class="sidebar">
+      <h2>Coffee Roasting</h2>
+      <ul>
+        <li onclick="window.location.href='../แดชบอร์ดลองโล้ะ/index.html'">หน้าแรก</li>
+        <li onclick="window.location.href='../HTML/stockall.html'">คลังสินค้า</li>
+        <li onclick="window.location.href='../customer(testๆ)/customer.html'">รายชื่อลูกค้า</li>
+        <li class="active" onclick="window.location.href='../HTML/plan.html'">รายการสั่งซื้อ</li>
+        <li onclick="window.location.href='../HTML/user.html'">จัดการสิทธิ์</li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <header class="topbar"></header>
+
+      <section class="content">
+        <div class="toolbar">
+          <button class="btn" onclick="window.location.href='../HTML/add_order_cus.html'">+ เพิ่มลูกค้า</button>
+
+          <div class="toolbar-right">
+            <input type="text" placeholder="ค้นหา รหัสลูกค้า, ชื่อ, หรือจังหวัด">
+
+            <input type="date">
+          </div>
+        </div>
 
             <table>
                 <thead>
@@ -98,6 +125,7 @@
 
         </section>
     </main>
+    </div>
     
 </body>
 </html>

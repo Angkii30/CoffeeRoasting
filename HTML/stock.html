@@ -9,37 +9,31 @@
 
 </head>
 <body>
-        <div class="layout">
-
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <h2 class="logo">Coffee Roasting</h2>
-            <ul class="menu">
-            <li onclick="window.location.href='../แดชบอร์ดลองโล้ะ/index.html'">หน้าแรก</li>
-            <li class="active" onclick="window.location.href='../HTML/stockall.html'">คลังสินค้า</li>
-            <li onclick="window.location.href='../customer(testๆ)/customer.html'">รายชื่อลูกค้า</li>
-            <li onclick="window.location.href='plan.html'">รายการสั่งซื้อ</li>
-            <li onclick="window.location.href='../HTML/user.html'">จัดการสิทธิ์</li>
-            </ul>
-        </aside>
+    <div class="layout">
+    <aside class="sidebar">
+      <h2>Coffee Roasting</h2>
+      <ul>
+        <li onclick="window.location.href='../แดชบอร์ดลองโล้ะ/index.html'">หน้าแรก</li>
+        <li class="active" onclick="window.location.href='../HTML/stockall.html'">คลังสินค้า</li>
+        <li onclick="window.location.href='.../customer(testๆ)/customer.html'">รายชื่อลูกค้า</li>
+        <li onclick="window.location.href='../HTML/plan.html'">รายการสั่งซื้อ</li>
+        <li onclick="window.location.href='../HTML/user.html'">จัดการสิทธิ์</li>
+      </ul>
+    </aside>
 
     <main class="main">
-         <header class="topbar">
-            <div class="profile">👤</div>
-        </header>
+      <header class="topbar"></header>
 
-        <h1 class="page-title">คลังเมล็ดกาแฟเชอร์รี่</h1>
+      <section class="content">
+        <div class="toolbar">
+          <button class="btn" onclick="window.location.href='../HTML/add_order_cus.html'">+ เพิ่มลูกค้า</button>
 
-        <section class="content">
-            <div class="toolbar">
-            <button class="btn" onclick="window.location.href='add_stock.html'">+ เพิ่มรายการ</button>
+          <div class="toolbar-right">
+            <input type="text" placeholder="ค้นหา รหัสลูกค้า, ชื่อ, หรือจังหวัด">
 
-                <div class="toolbar-right">
-                    <input type="text" placeholder="ค้นหารายการ">
-
-                    <input type="date"> 
-                </div>
-            </div>
+            <input type="date">
+          </div>
+        </div>
 
             <table>
                 <thead>
