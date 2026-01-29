@@ -5,6 +5,12 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+
+body {
+  margin: 0;
+  background: #FAF6EF;
+}
+
 h2 {
     color: rgb(107, 78, 46);
   display: block;
@@ -17,11 +23,6 @@ h2 {
   margin-inline-end: 0px;
   margin-inline-start: 0px;
   width: 220px;
-}
-
-body {
-  margin: 0;
-  background: #FAF6EF;
 }
 
 .layout {

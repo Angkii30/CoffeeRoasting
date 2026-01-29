@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #FAF6EF;
+}
+
+.topbar {
+  height: 60px;
+  background: #9b6b3f
+}
+
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+h1 {
+    color: rgb(107, 78, 46);
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+}
+
+.card {
+    width: 520px;
+    background-color: #EFE7DA;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgb(107, 78, 46);
+    position: relative;
+}
+
+.card-header {
+    background-color: #D6BEA1;
+    padding: 15px 20px;
+    border-radius: 16px 16px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+    color:rgb(107, 78, 46);
+}
+
+.card-body {
+    padding: 25px;
+    padding-bottom: 60px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+label {
+    width: 140px;
+    white-space: nowrap;
+    color: #5A3B23;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #B9A082;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+.actions {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    display: flex;
+    gap: 9px;
+}
+
+.btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn.cancel {
+    background-color: #D6BEA1;
+}
+
+.btn.save {
+    background-color: #8B6F47;
+    color: #fff;
+}
+
+select {
+    color: rgb(107, 78, 46);
+    flex: 1; 
+}
+
+/* select:valid {
+    color:  #B9A082;
+} */
