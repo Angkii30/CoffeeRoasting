@@ -17,10 +17,10 @@ body {
 
 .page-title {
     text-align: center;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: bold;
     color: #8B6F47;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 
@@ -36,12 +36,38 @@ h1 {
 
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center;   
+    align-items: center;       
     height: calc(100vh - 60px);
+}
+.header-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-row label {
+    width: auto;       
+    white-space: nowrap;
+}
+
+.header-row input {
+    width: 250px;
+}
+
+.header-row select {
+    width: 150px;
 }
 
 .card {
+    width: 900px;
+    background-color: #EFE7DA;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgb(107, 78, 46);
+    position: relative;
+}
+
+.card_user {
     width: 520px;
     background-color: #EFE7DA;
     border-radius: 16px;
@@ -78,8 +104,9 @@ label {
 input, select, textarea {
     width: 100%;
     padding: 8px 10px;
-    border-radius: 8px;
-    border: 1px solid #B9A082;
+    border-radius: 10px;
+    border: 1px solid #c8a57a;
+    font-size: 14px;
 }
 
 textarea {
@@ -112,13 +139,42 @@ textarea {
     color: #fff;
 }
 
-select {
-    color: rgb(107, 78, 46);
-    flex: 1; 
-}
 
 /* select:valid {
     color:  #B9A082;
 } */
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    margin-bottom: 10px;
+}
 
+.row.three {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 10px;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+.row input{
+    width: 170px;
+}
+
+.row select{
+    width: 170px;
+}
+
+.field label {
+    min-width: 1px;
+    white-space: nowrap;
+}
 

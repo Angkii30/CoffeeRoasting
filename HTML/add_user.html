@@ -12,27 +12,38 @@
         <header class="topbar"></header>
 
             <form action="add_user.html">
+            <div class="container">
+                <div class="card_user">
+                    <div class="card-header">
+                        เพิ่มรายชื่อผู้ใช้
+                    </div>
 
-                <label for="">ชื่อผู้ใช้ : </label>
-                <input type="text" name="source" id="source">
-                <br>
+                    <div class="card-body">
+                        <div class="form-row">
+                            <label>ชื่อผู้ใช้ :</label>
+                            <input type="text">
+                        </div>
 
-                <label for="">รหัสผ่าน : </label>
-                <input type="text" name="source" id="source">
-                <br>
+                        <div class="form-row">
+                            <label>รหัสผ่าน :</label>
+                            <input type="password">
+                        </div>
 
-                <label for=""disabled selected hidden>สิทธิ์การใช้งาน : </label>
-                <select class="select-process">
-                    <option value="">คลิกเพื่อเลือก</option>
-                    <option value="">แอดมิน</option>
-                    <option value="honey">เจ้าของ</option>
-                    <option value="dry">ผู้ช่วย</option>
-                </select> <br>
-
-            <button type="reset" class="btn cancle" onclick="history.back()">ยกเลิก</button>
-            <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
-
+                        <div class="form-row">
+                            <label>สิทธิ์การใช้งาน :</label>
+                            <select id="roleSelect">
+                                <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
+                                <option value="admin">แอดมิน</option>
+                                <option value="owner">เจ้าของ</option>
+                                <option value="staff">ผู้ช่วย</option>
+                            </select>
+                        </div>
+                <div class="actions">
+                    <button type="reset" class="btn cancel" onclick="history.back()">ยกเลิก</button>
+                    <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
+                </div>
             <script>
+
             function savedata() {
                 alert("บันทึกข้อมูลเรียบร้อย");
                 history.back();
