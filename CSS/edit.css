@@ -16,11 +16,15 @@ body {
 }
 
 .page-title {
-    text-align: center;
+    text-align:left;
     font-size: 26px;
     font-weight: bold;
     color: #8B6F47;
-    margin-bottom: 15px;
+    
+    position: relative;
+    left: 340px;   /* ซ้าย → ขวา */
+    top: 80px;    /* บน → ล่าง */
+
 }
 
 
@@ -92,13 +96,14 @@ h1 {
 .form-row {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    gap: 15px;
 }
 
 label {
-    width: 140px;
-    white-space: nowrap;
     color: #5A3B23;
+    min-width: 80px;   
+    margin-right: 15px; 
+    white-space: nowrap;
 }
 
 input, select, textarea {
@@ -139,20 +144,17 @@ textarea {
     color: #fff;
 }
 
-
-/* select:valid {
-    color:  #B9A082;
-} */
 .row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px 20px;
-    margin-bottom: 10px;
+    gap: 15px 20px;
+    margin-bottom: 15px;
 }
 
 .row.three {
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 10px;
+    gap: 15px;
 }
 
 .field {
@@ -161,20 +163,25 @@ textarea {
     gap: 15px;
 }
 
-.field.full {
-    grid-column: 1 / -1;
+.field input, .field select{
+    width: 200px;
 }
 
-.row input{
-    width: 170px;
+.field_t {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.row select{
-    width: 170px;
+.field_t input, .field_t select{
+    width: 120px;
 }
 
-.field label {
-    min-width: 1px;
-    white-space: nowrap;
+/* .phone {
+    grid-column: 1 / 2;   
 }
+
+.email {
+    grid-column: 2 / 2;  
+} */
 
