@@ -11,19 +11,21 @@ body {
 }
 
 .topbar {
-  height: 60px;
-  background: #9b6b3f
+    height: 60px;
+    background: #9b6b3f
 }
 
 .page-title {
-    text-align:left;
+    text-align: left;
     font-size: 26px;
     font-weight: bold;
     color: #8B6F47;
-    
+
     position: relative;
-    left: 340px;   /* ซ้าย → ขวา */
-    top: 80px;    /* บน → ล่าง */
+    left: 340px;
+    /* ซ้าย → ขวา */
+    top: 60px;
+    /* บน → ล่าง */
 
 }
 
@@ -40,10 +42,11 @@ h1 {
 
 .container {
     display: flex;
-    justify-content: center;   
-    align-items: center;       
+    justify-content: center;
+    align-items: center;
     height: calc(100vh - 60px);
 }
+
 .header-row {
     display: flex;
     align-items: center;
@@ -51,7 +54,7 @@ h1 {
 }
 
 .header-row label {
-    width: auto;       
+    width: auto;
     white-space: nowrap;
 }
 
@@ -85,7 +88,7 @@ h1 {
     border-radius: 16px 16px 0 0;
     font-size: 18px;
     font-weight: bold;
-    color:rgb(107, 78, 46);
+    color: rgb(107, 78, 46);
 }
 
 .card-body {
@@ -97,16 +100,38 @@ h1 {
     display: flex;
     align-items: center;
     gap: 15px;
+
+}
+
+.form-row-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.radio-group {
+    gap: 5px;
+}
+
+.radio-group .radio-label {
+    min-width: auto;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 label {
     color: #5A3B23;
-    min-width: 80px;   
-    margin-right: 15px; 
+    min-width: 80px;
+    margin-right: 15px;
     white-space: nowrap;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     width: 100%;
     padding: 8px 10px;
     border-radius: 10px;
@@ -148,7 +173,7 @@ textarea {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px 20px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .row.three {
@@ -163,7 +188,8 @@ textarea {
     gap: 15px;
 }
 
-.field input, .field select{
+.field input,
+.field select {
     width: 200px;
 }
 
@@ -173,7 +199,8 @@ textarea {
     gap: 10px;
 }
 
-.field_t input, .field_t select{
+.field_t input,
+.field_t select {
     width: 120px;
 }
 
@@ -184,4 +211,3 @@ textarea {
 .email {
     grid-column: 2 / 2;  
 } */
-

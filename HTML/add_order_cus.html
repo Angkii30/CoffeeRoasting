@@ -12,77 +12,148 @@
         <header class="topbar"></header>
 
             <form action="add_orderuser.html">
-            <h2 class="page-title">แก้ไขรายการสั่งซื้อ</h2>
+            <h2 class="page-title">เพิ่ม</h2>
             <div class="container">
                 <div class="card">
-                    <div class="card-header">
-                        <label for="customer_id">รหัสลูกค้า :</label>
-                        <input type="text" id="customer_id" name="customer_id">
+                    <div class="card-header"> 
+                        <div class="header-row">
+                            <label for="customer_id">รหัสลูกค้า :</label>
+                            <input type="text" id="customer_id" name="customer_id">
+
+                            <label for="status">สถานะ :</label>
+                            <select class="select-status">
+                                <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
+                                <option value="">รอดำเนินการ</option>
+                                <option value="">กำลังดำเนินการ</option>
+                                <option value="">เสร็จสิ้น</option>
+                            </select>
+                        </div>
                     </div>
                 
                     <div class="card-body">
-                        <div class="form-row">
-                            <label for="firstname">ชื่อ :</label>
-                            <input type="text" id="firstname" name="firstname">
+                        <div class="row">
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="firstname">ชื่อ :</label>
+                                    <input type="text" id="firstname" name="firstname">
+                                </div>
 
-                            <label for="lastname">นามสกุล :</label>
-                            <input type="text" id="lastname" name="lastname"> 
-
-                            <label for="">ที่อยู่ : </label>
-                            <textarea name="note" id="note"></textarea> 
-
-                            <label for="province">จังหวัด : </label>
-                            <select name="province" id="province" class="select-process" required>
-                                <option value=""disabled selected hidden>-- เลือกจังหวัด --</option>
-                                <!-- /* อาจต้องใช้ js */ -->
-                            </select><br>
-
-                            <label for="">เบอร์โทรติดต่อ : </label>
-                            <input type="text" name="phone" id="phone">
-
-                            <label for="">อีเมล : </label>
-                            <input type="text" name="email" id="email"><br>
-
-                            <label for="">กระบวนการ : </label>
-                            <select class="select-process">
-                                <option value=""disabled selected hidden>คลิกเพื่อเลือก</option>
-                                <option value="washed">Washed Process</option>
-                                <option value="honey">Honey Process</option>
-                                <option value="dry">Dry Process</option>
-                            </select> <br>
-
-                            <label for="">ระดับการคั่ว : </label>
-                            <select class="select-roast">
-                                <option value=""disabled selected hidden>คลิกเพื่อเลือก</option>
-                                <option value="light">คั่วอ่อน</option>
-                                <option value="medium">คั่วกลาง</option>
-                                <option value="mediumplus">คั่วกลาง +</option>
-                                <option value="mediumdark">คั่วกลางเข้ม</option>
-                                <option value="dark">คั่วเข้ม</option>
-                            </select> <br>
-
-                            <div class="form-row">
-                                <label for="weight">ปริมาณ (กิโลกรัม) :</label>
-                                <input type="number" id="weight" name="weight" step="0.01">
+                                <div class="form-row">
+                                    <label for="lastname">นามสกุล :</label>
+                                    <input type="text" id="lastname" name="lastname">
+                                </div>
                             </div>
-
-                            <div class="form-row">
-                                <label for="quantity">จำนวน :</label>
-                                <input type="number" id="quantity" name="quantity">
-                            </div>
-
-                            <div class="form-row">
-                                <label for="price">ราคา :</label>
-                                <input type="number" id="price" name="price">
-                            </div>
-
                         </div>
+                        <div class="row">
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="note">ที่อยู่ :</label>
+                                    <textarea id="note" name="note"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="province">จังหวัด :</label>
+                                    <select id="province" name="province" required>
+                                        <option value="" disabled selected hidden>-- เลือกจังหวัด --</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- <div class="phone"> -->
+                                <div class="field">
+                                    <div class="form-row">
+                                        <label for="phone">เบอร์โทร :</label>
+                                        <input type="text" id="phone" name="phone">
+                                    </div>
+                                </div>
+                            <!-- </div> -->
+
+                            <!-- <div class="email"> -->
+                                <div class="field">
+                                    <div class="form-row">
+                                        <label for="email">อีเมล :</label>
+                                        <input type="email" id="email" name="email">
+                                    </div>
+                                </div>
+                            <!-- </div> -->
+                        </div>
+
+                        <div class="row">
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="">กระบวนการ : </label>
+                                        <select class="select-process">
+                                            <option value=""disabled selected hidden>คลิกเพื่อเลือก</option>
+                                            <option value="washed">Washed Process</option>
+                                            <option value="honey">Honey Process</option>
+                                            <option value="dry">Dry Process</option>
+                                        </select> <br>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="">ระดับการคั่ว : </label>
+                                    <select class="select-roast">
+                                        <option value=""disabled selected hidden>คลิกเพื่อเลือก</option>
+                                        <option value="light">คั่วอ่อน</option>
+                                        <option value="medium">คั่วกลาง</option>
+                                        <option value="mediumplus">คั่วกลาง +</option>
+                                        <option value="mediumdark">คั่วกลางเข้ม</option>
+                                        <option value="dark">คั่วเข้ม</option>
+                                    </select> <br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row three">
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="roast_date">วันที่คั่ว :</label>
+                                    <input type="date" id="roast_date" name="roast_date">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="roast_time">เวลาที่คั่ว :</label>
+                                    <input type="time" id="roast_time" name="roast_time">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="weight">ปริมาณ (กิโลกรัม) :</label>
+                                    <input type="number" id="weight" name="weight" step="0.01">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="quantity">จำนวน :</label>
+                                    <input type="number" id="quantity" name="quantity">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="price">ราคา :</label>
+                                    <input type="number" id="price" name="price">
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                <div class="actions">
-                    <button type="reset" class="btn cancle" onclick="history.back()">ยกเลิก</button>
-                    <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
+
+                    <div class="actions">
+                        <button type="reset" class="btn cancle" onclick="history.back()">ยกเลิก</button>
+                        <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
+                    </div>
+
                 </div>
-            
+            </div>
 
             <script>
             function savedata() {

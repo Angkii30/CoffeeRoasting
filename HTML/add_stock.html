@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,20 @@
     <link rel="icon" href="Picture/logo.png">
     <link rel="stylesheet" href="../CSS/edit.css">
 </head>
+
 <body>
     <main class="main">
         <header class="topbar"></header>
 
-            <form action="add_stock.html">
+        <form action="add_stock.html">
             <h2 class="page-title">แก้ไขคลังสินค้า</h2>
             <div class="container">
                 <div class="card">
-                    <div class="card-header"> 
+                    <div class="card-header">
                         <div class="header-row">
                             <label for="stock">เลือกรายการคลัง :</label>
                             <select class="select-stock">
-                                <option value=""disabled selected hidden>คลิกเพื่อเลือก</option>
+                                <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
                                 <option value="cherry">คลังเมล็ดกาแฟเชอร์รี่</option>
                                 <option value="kala">คลังเมล็ดกาแฟกะลา</option>
                                 <option value="san">คลังเมล็ดกาแฟสาร</option>
@@ -27,21 +29,24 @@
                             </select>
                         </div>
                     </div>
-                
+
                     <div class="card-body">
                         <div class="row">
                             <div class="field">
-                                <div class="form-row">
-                                <label for="">สายพันธุ์ :</label>
-                        
-                                    <label><input type="radio" name="type"> อาราบิก้า</label>
-                                    <label><input type="radio" name="type"> โรบัสต้า</label>
+                                <div class="form-row radio-group">
+                                    <label for="">สายพันธุ์ :</label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="type"> อาราบิก้า
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="type"> โรบัสต้า
+                                    </label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
-                             <div class="field">
+                            <div class="field">
                                 <div class="form-row">
                                     <label for="note">แหล่งที่มา :</label>
                                     <textarea id="note" name="note"></textarea>
@@ -51,12 +56,12 @@
                             <div class="field">
                                 <div class="form-row">
                                     <label for="">กระบวนการ : </label>
-                                        <select class="select-process">
-                                            <option value=""disabled selected hidden>คลิกเพื่อเลือก</option>
-                                            <option value="washed">Washed Process</option>
-                                            <option value="honey">Honey Process</option>
-                                            <option value="dry">Dry Process</option>
-                                        </select> <br>
+                                    <select class="select-process">
+                                        <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
+                                        <option value="washed">Washed Process</option>
+                                        <option value="honey">Honey Process</option>
+                                        <option value="dry">Dry Process</option>
+                                    </select> <br>
                                 </div>
                             </div>
 
@@ -64,13 +69,13 @@
                                 <div class="form-row">
                                     <label for="">ระดับการคั่ว : </label>
                                     <select class="select-roast">
-                                        <option value=""disabled selected hidden>คลิกเพื่อเลือก</option>
+                                        <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
                                         <option value="light">คั่วอ่อน</option>
                                         <option value="medium">คั่วกลาง</option>
                                         <option value="mediumplus">คั่วกลาง +</option>
                                         <option value="mediumdark">คั่วกลางเข้ม</option>
                                         <option value="dark">คั่วเข้ม</option>
-                                    </select> 
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +109,7 @@
                                 </div>
                             </div>
 
-                             <div class="field_t">
+                            <div class="field_t">
                                 <div class="form-row">
                                     <label for="note">ผู้รับผิดชอบ :</label>
                                     <input type="text" id="staff" name="staffname">
@@ -132,12 +137,13 @@
             </div>
 
             <script>
-            function savedata() {
-                alert("บันทึกข้อมูลเรียบร้อย");
-                history.back();
-            }
+                function savedata() {
+                    alert("บันทึกข้อมูลเรียบร้อย");
+                    history.back();
+                }
             </script>
     </main>
 
 </body>
+
 </html>
