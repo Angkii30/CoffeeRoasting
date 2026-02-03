@@ -23,7 +23,7 @@ body {
 
     position: relative;
     left: 340px;
-    /* ซ้าย → ขวา */
+    /* ซ้าย → ขวา
     top: 60px;
     /* บน → ล่าง */
 
@@ -111,10 +111,11 @@ h1 {
 }
 
 .radio-group {
+    display: flex;
     gap: 5px;
 }
 
-.radio-group .radio-label {
+.radio-label {
     min-width: auto;
     margin-right: 0;
     display: flex;
