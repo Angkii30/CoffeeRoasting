@@ -23,10 +23,36 @@ body {
 
     position: relative;
     left: 340px;
-    /* ซ้าย → ขวา
-    top: 60px;
+    /* ซ้าย → ขวา */
+    top: 80px;
     /* บน → ล่าง */
 
+}
+
+.page-title-cus {
+    text-align: left;
+    font-size: 26px;
+    font-weight: bold;
+    color: #8B6F47;
+
+    position: relative;
+    left: 340px;
+    /* ซ้าย → ขวา */
+    top: 150px;
+    /* บน → ล่าง */
+}
+
+.page-title-user {
+    text-align: left;
+    font-size: 26px;
+    font-weight: bold;
+    color: #8B6F47;
+
+    position: relative;
+    left: 520px;
+    /* ซ้าย → ขวา */
+    top: 180px;
+    /* บน → ล่าง */
 }
 
 
@@ -110,7 +136,12 @@ h1 {
     margin-bottom: 8px;
 }
 
-.radio-group {
+/* .radio-group {
+    display: flex;
+    gap: 5px;
+} */
+
+.radio-group input[type="radio"] {
     display: flex;
     gap: 5px;
 }
@@ -120,7 +151,7 @@ h1 {
     margin-right: 0;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 2px;
 }
 
 label {
@@ -179,8 +210,6 @@ textarea {
 
 .row.three {
     grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 10px;
-    gap: 15px;
 }
 
 .field {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,13 @@
     <link rel="icon" href="Picture/logo.png">
     <link rel="stylesheet" href="../CSS/edit.css">
 </head>
+
 <body>
     <main class="main">
         <header class="topbar"></header>
 
-            <form action="add_user.html">
+        <form action="add_user.html">
+            <h2 class="page-title-user">แก้ไขสิทธ์การใช้งานระบบ</h2>
             <div class="container">
                 <div class="card_user">
                     <div class="card-header">
@@ -38,18 +41,19 @@
                                 <option value="staff">ผู้ช่วย</option>
                             </select>
                         </div>
-                <div class="actions">
-                    <button type="reset" class="btn cancel" onclick="history.back()">ยกเลิก</button>
-                    <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
-                </div>
-            <script>
+                        <div class="actions">
+                            <button type="reset" class="btn cancel" onclick="history.back()">ยกเลิก</button>
+                            <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
+                        </div>
+                        <script>
 
-            function savedata() {
-                alert("บันทึกข้อมูลเรียบร้อย");
-                history.back();
-            }
-            </script>
+                            function savedata() {
+                                alert("บันทึกข้อมูลเรียบร้อย");
+                                history.back();
+                            }
+                        </script>
     </main>
 
 </body>
+
 </html>

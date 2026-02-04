@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,70 +8,143 @@
     <link rel="icon" href="Picture/logo.png">
     <link rel="stylesheet" href="../CSS/edit.css">
 </head>
+
 <body>
     <main class="main">
         <header class="topbar"></header>
 
-            <form action="add_stock.html">
-                <label for=""disabled selected hidden>เลือกรายการคลัง : </label>
-                <select class="select-stock">
-                    <option value=""disabled selected hidden>คลิกเพื่อเลือก</option>
-                    <option value="cherry">คลังเมล็ดกาแฟเชอร์รี่</option>
-                    <option value="kala">คลังเมล็ดกาแฟกะลา</option>
-                    <option value="san">คลังเมล็ดกาแฟสาร</option>
-                    <option value="roast">คลังเมล็ดกาแฟคั่ว</option>
-                </select> <br>
-                
-                <label for="">สายพันธุ์ : </label>
-                <input type="radio" name="gene" id="gene" value="0"> อราบิก้า
-                <input type="radio" name="gene" id="gene" value="1"> โรบัสต้า         <br>
+        <form action="add_stock.html">
+            <h2 class="page-title">แก้ไขคลังสินค้า</h2>
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="header-row">
+                            <label for="stock">เลือกรายการคลัง :</label>
+                            <select class="select-stock">
+                                <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
+                                <option value="cherry">คลังเมล็ดกาแฟเชอร์รี่</option>
+                                <option value="kala">คลังเมล็ดกาแฟกะลา</option>
+                                <option value="san">คลังเมล็ดกาแฟสาร</option>
+                                <option value="roast">คลังเมล็ดกาแฟคั่ว</option>
+                            </select>
+                        </div>
+                    </div>
 
-                <label for="">ปริมาณ(กิโลกรัม) : </label>
-                <input type="number" name="" id=""> <br>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="field">
+                                <div class="radio-group">
+                                    <label for="">สายพันธุ์ :</label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="type"> อาราบิก้า
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="type"> โรบัสต้า
+                                    </label>
+                                </div>
+                            </div>
 
-                <label for=""disabled selected hidden>กระบวนการ : </label>
-                <select class="select-process">
-                    <option value="">คลิกเพื่อเลือก</option>
-                    <option value="washed">Washed Process</option>
-                    <option value="honey">Honey Process</option>
-                    <option value="dry">Dry Process</option>
-                </select> <br>
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="note">แหล่งที่มา :</label>
+                                    <textarea id="note" name="note"></textarea>
+                                </div>
+                            </div>
+                        </div>
 
-                <label for=""disabled selected hidden>ระดับการคั่ว : </label>
-                <select class="select-roast">
-                    <option value="">คลิกเพื่อเลือก</option>
-                    <option value="light">คั่วอ่อน</option>
-                    <option value="medium">คั่วกลาง</option>
-                    <option value="mediumplus">คั่วกลาง +</option>
-                    <option value="mediumdark">คั่วกลางเข้ม</option>
-                    <option value="dark">คั่วเข้ม</option>
-                </select> <br>
 
-                <label for="">วันที่รับเข้า : </label>
-                <input type="date"> <br>
+                        <div class="row">
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="">กระบวนการ : </label>
+                                    <select class="select-process">
+                                        <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
+                                        <option value="washed">Washed Process</option>
+                                        <option value="honey">Honey Process</option>
+                                        <option value="dry">Dry Process</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                <label for="">แหล่งที่มา : </label>
-                <input type="text" name="source" id="source">
-                <!-- <textarea name="source" id="source"></textarea> --> <br>
-            
-                <label for="">ผู้รับผิดชอบ : </label>
-                <input type="text" name="person" id="person"> <br>
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="">ระดับการคั่ว : </label>
+                                    <select class="select-roast">
+                                        <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
+                                        <option value="light">คั่วอ่อน</option>
+                                        <option value="medium">คั่วกลาง</option>
+                                        <option value="mediumplus">คั่วกลาง +</option>
+                                        <option value="mediumdark">คั่วกลางเข้ม</option>
+                                        <option value="dark">คั่วเข้ม</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
 
-                <label for="">หมายเหตุ : </label>
-                <!-- <input type="text" name="source" id="source"> -->
-                <textarea name="note" id="note"></textarea> 
-            </form>
+                        <div class="row three">
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="roast_date">วันที่คั่ว :</label>
+                                    <input type="date" id="roast_date" name="roast_date">
+                                </div>
+                            </div>
 
-            <button type="reset" class="btn cancle" onclick="history.back()">ยกเลิก</button>
-            <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="weight">ปริมาณ (กิโลกรัม) :</label>
+                                    <input type="number" id="weight" name="weight" step="0.01">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="quantity">จำนวน :</label>
+                                    <input type="number" id="quantity" name="quantity">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="price">ราคา :</label>
+                                    <input type="number" id="price" name="price">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="note">ผู้รับผิดชอบ :</label>
+                                    <input type="text" id="staff" name="staffname">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="note">หมายเหตุ :</label>
+                                    <textarea id="note" name="note"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="actions">
+                        <button type="reset" class="btn cancle" onclick="history.back()">ยกเลิก</button>
+                        <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
+                    </div>
+
+                </div>
+            </div>
 
             <script>
-            function savedata() {
-                alert("บันทึกข้อมูลเรียบร้อย");
-                history.back();
-            }
+                function savedata() {
+                    alert("บันทึกข้อมูลเรียบร้อย");
+                    history.back();
+                }
             </script>
     </main>
 
 </body>
+
 </html>

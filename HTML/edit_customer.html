@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,22 @@
     <link rel="icon" href="Picture/logo.png">
     <link rel="stylesheet" href="../CSS/edit.css">
 </head>
+
 <body>
     <main class="main">
         <header class="topbar"></header>
 
-            <form action="add_orderuser.html">
-            <h2 class="page-title">แก้ไขข้อมูลลูกค้า</h2>
+        <form action="add_orderuser.html">
+            <h2 class="page-title-cus">แก้ไขข้อมูลลูกค้า</h2>
             <div class="container">
                 <div class="card">
-                    <div class="card-header"> 
+                    <div class="card-header">
                         <div class="header-row">
                             <label for="customer_id">รหัสลูกค้า :</label>
                             <input type="text" id="customer_id" name="customer_id">
                         </div>
                     </div>
-                
+
                     <div class="card-body">
                         <div class="row">
                             <div class="field">
@@ -54,21 +56,21 @@
                             </div>
 
                             <!-- <div class="phone"> -->
-                                <div class="field">
-                                    <div class="form-row">
-                                        <label for="phone">เบอร์โทร :</label>
-                                        <input type="text" id="phone" name="phone">
-                                    </div>
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="phone">เบอร์โทร :</label>
+                                    <input type="text" id="phone" name="phone">
                                 </div>
+                            </div>
                             <!-- </div> -->
 
                             <!-- <div class="email"> -->
-                                <div class="field">
-                                    <div class="form-row">
-                                        <label for="email">อีเมล :</label>
-                                        <input type="email" id="email" name="email">
-                                    </div>
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="email">อีเมล :</label>
+                                    <input type="email" id="email" name="email">
                                 </div>
+                            </div>
                             <!-- </div> -->
                         </div>
 
@@ -83,12 +85,13 @@
             </div>
 
             <script>
-            function savedata() {
-                alert("บันทึกข้อมูลเรียบร้อย");
-                history.back();
-            }
+                function savedata() {
+                    alert("บันทึกข้อมูลเรียบร้อย");
+                    history.back();
+                }
             </script>
     </main>
 
 </body>
+
 </html>
