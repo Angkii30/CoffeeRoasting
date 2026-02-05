@@ -1,73 +1,76 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <title>Coffee Roasting Dashboard</title>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="../HTML/Picture/logo.png">
 </head>
+
 <body>
 
-<div class="layout">
+    <div class="layout">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <h2 class="logo">Coffee Roasting</h2>
-        <ul class="menu">
-            <li class="active">หน้าแรก</li>
-            <li onclick="window.location.href='../HTML/stockall.html'">คลังสินค้า</li>
-            <li onclick="window.location.href='../customer(testๆ)/customer.html'">รายชื่อลูกค้า</li>
-            <li onclick="window.location.href='../HTML/plan.html'">รายการสั่งซื้อ</li>
-            <li onclick="window.location.href='../HTML/user.html'">จัดการสิทธิ์</li>
-        </ul>
-    </aside>
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2 class="logo">Coffee Roasting</h2>
+            <ul class="menu">
+                <li class="active">หน้าแรก</li>
+                <li onclick="window.location.href='../HTML/stockall.html'">คลังสินค้า</li>
+                <li onclick="window.location.href='../HTML/customer.html'">รายชื่อลูกค้า</li>
+                <li onclick="window.location.href='../HTML/plan.html'">รายการสั่งซื้อ</li>
+                <li onclick="window.location.href='../HTML/user.html'">จัดการสิทธิ์</li>
+            </ul>
+        </aside>
 
-    <!-- Main -->
-    <main class="main">
+        <!-- Main -->
+        <main class="main">
 
-        <!-- Topbar -->
-        <header class="topbar">
-            <div class="profile"></div>
-        </header>
+            <!-- Topbar -->
+            <header class="topbar">
+                <div class="profile"></div>
+            </header>
 
-        <!-- Content -->
-        <section class="content">
+            <!-- Content -->
+            <section class="content">
 
-            <!-- Stat cards -->
-            <div class="cards">
-                <div class="card">
-                    <p>จำนวนเมล็ดกาแฟเชอร์รี่ คงเหลือ</p>
-                    <h3>180 KG</h3>
+                <!-- Stat cards -->
+                <div class="cards">
+                    <div class="card">
+                        <p>จำนวนเมล็ดกาแฟเชอร์รี่ คงเหลือ</p>
+                        <h3>180 KG</h3>
+                    </div>
+                    <div class="card">
+                        <p>จำนวนเมล็ดกาแฟกะลา คงเหลือ</p>
+                        <h3>180 KG</h3>
+                    </div>
+                    <div class="card">
+                        <p>จำนวนเมล็ดกาแฟสาร คงเหลือ</p>
+                        <h3>180 KG</h3>
+                    </div>
+                    <div class="card">
+                        <p>จำนวนเมล็ดกาแฟคั่ว คงเหลือ</p>
+                        <h3>180 KG</h3>
+                    </div>
                 </div>
-                <div class="card">
-                    <p>จำนวนเมล็ดกาแฟกะลา คงเหลือ</p>
-                    <h3>180 KG</h3>
+
+                <!-- Panels -->
+                <div class="panels">
+                    <div class="panel large"></div>
+                    <div class="panel large"></div>
                 </div>
-                <div class="card">
-                    <p>จำนวนเมล็ดกาแฟสาร คงเหลือ</p>
-                    <h3>180 KG</h3>
+
+                <div class="panels">
+                    <div class="panel wide"></div>
+                    <div class="panel tall"></div>
                 </div>
-                <div class="card">
-                    <p>จำนวนเมล็ดกาแฟคั่ว คงเหลือ</p>
-                    <h3>180 KG</h3>
-                </div>
-            </div>
 
-            <!-- Panels -->
-            <div class="panels">
-                <div class="panel large"></div>
-                <div class="panel large"></div>
-            </div>
+            </section>
+        </main>
 
-            <div class="panels">
-                <div class="panel wide"></div>
-                <div class="panel tall"></div>
-            </div>
-
-        </section>
-    </main>
-
-</div>
+    </div>
 
 </body>
+
 </html>

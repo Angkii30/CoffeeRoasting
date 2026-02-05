@@ -143,7 +143,9 @@ h1 {
 
 .radio-group input[type="radio"] {
     display: flex;
-    gap: 5px;
+    /* flex-direction: row; */
+    align-items: center;
+    gap: 15px
 }
 
 .radio-label {
@@ -214,8 +216,8 @@ textarea {
 
 .field {
     display: flex;
-    align-items: center;
-    gap: 15px;
+    align-items: flex-start;
+    /* gap: 15px; */
 }
 
 .field input,
