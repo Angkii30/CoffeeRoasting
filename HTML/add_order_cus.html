@@ -7,6 +7,7 @@
     <title>Coffee Roasting</title>
     <link rel="icon" href="Picture/logo.png">
     <link rel="stylesheet" href="../CSS/edit.css">
+    <script src="../JS/add_orderanduser.js"></script>
 </head>
 
 <body>
@@ -37,12 +38,12 @@
                             <div class="field">
                                 <div class="form-row">
                                     <label for="firstname">ชื่อ :</label>
-                                    <input type="text" id="firstname" name="firstname">
+                                    <input type="text" id="first_name" name="first_name">
                                 </div>
 
                                 <div class="form-row">
                                     <label for="lastname">นามสกุล :</label>
-                                    <input type="text" id="lastname" name="lastname">
+                                    <input type="text" id="last_name" name="last_name">
                                 </div>
                             </div>
                         </div>
@@ -50,7 +51,7 @@
                             <div class="field">
                                 <div class="form-row">
                                     <label for="note">ที่อยู่ :</label>
-                                    <textarea id="note" name="note"></textarea>
+                                    <textarea id="address" name="address"></textarea>
                                 </div>
                             </div>
 
@@ -151,18 +152,18 @@
 
                     <div class="actions">
                         <button type="reset" class="btn cancle" onclick="history.back()">ยกเลิก</button>
-                        <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
+                        <button type="submit" class="btn save">บันทึก</button>
                     </div>
 
                 </div>
             </div>
 
-            <script>
+            <!-- <script>
                 function savedata() {
                     alert("บันทึกข้อมูลเรียบร้อย");
                     history.back();
                 }
-            </script>
+            </script> -->
     </main>
 
 </body>
