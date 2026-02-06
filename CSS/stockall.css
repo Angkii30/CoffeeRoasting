@@ -1,15 +1,15 @@
-<style>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    margin: 0;
-    background: #FAF6EF;
+  margin: 0;
+  background: #FAF6EF;
 }
+
 /* Layout */
 .layout {
   display: flex;
@@ -25,7 +25,11 @@ body {
 }
 
 .sidebar h2 {
-    color: rgb(107, 78, 46);
+  margin-bottom: 5px;
+}
+
+h2 {
+  color: rgb(107, 78, 46);
   display: block;
   font-size: 24px;
   font-weight: 700;
@@ -38,16 +42,18 @@ body {
   width: 220px;
 }
 
+
 .sidebar ul {
   list-style: none;
-    cursor: pointer;
+  color: rgb(107, 78, 46);
 }
 
 .sidebar li {
   padding: 12px;
   margin-bottom: 10px;
   border-radius: 8px;
-  color: rgb(107, 78, 46);
+  cursor: pointer;
+  display: flex;
 }
 
 .sidebar li:hover,
@@ -68,7 +74,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   padding: 0 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .user-icon {
@@ -78,15 +84,21 @@ body {
   border-radius: 50%;
 }
 
-/* Content */
 .content {
-  padding: 20px;
-  
+  padding: 30px;
+
 }
 
 .page-title {
-  margin-bottom: 20px;
-  color: #65453A;}
+  margin-bottom: 30px;
+  font-size: 48px;
+  color: rgb(107, 78, 46);
+  position: relative;
+  left: 30px;
+  /* ซ้าย → ขวา */
+  top: 30px;
+  /* บน → ล่าง */
+}
 
 /* Cards */
 .card-grid {
@@ -103,7 +115,7 @@ body {
   box-shadow: 0 4px 10px #65453A;
   color: #65453A;
   width: 100%;
-  max-width: 250px;
+  max-width: 280px;
 }
 
 .stock-card h2 {
@@ -117,5 +129,3 @@ body {
   font-weight: bold;
   margin-top: 10px;
 }
-
-</style>

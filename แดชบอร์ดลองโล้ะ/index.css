@@ -1,4 +1,3 @@
-<style>
 * {
     margin: 0;
     padding: 0;
@@ -6,22 +5,38 @@
     font-family: Arial, sans-serif;
 }
 
+h2 {
+    color: rgb(107, 78, 46);
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    height: 28px;
+    margin-block-end: 30px;
+    margin-block-start: 19.90625px;
+    margin-bottom: 30px;
+    margin-inline-end: 0px;
+    margin-inline-start: 0px;
+    width: 220px;
+}
+
 body {
     margin: 0;
     background-color: #FAF6EF;
 }
 
-/* Layout */
 .layout {
     display: flex;
     min-height: 100vh;
 }
 
-/* Sidebar */
 .sidebar {
     width: 220px;
     background-color: #EDE8E1;
     padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 5px;
 }
 
 .logo {
@@ -31,19 +46,20 @@ body {
 
 .menu {
     list-style: none;
+    color: rgb(107, 78, 46);
 }
 
 .menu li {
     padding: 12px;
     margin-bottom: 10px;
     border-radius: 8px;
-    color: #6B4E2E;
     cursor: pointer;
+    display: flex;
 }
 
 .menu li.active,
 .menu li:hover {
-    background-color: #C6B099;
+    background: #C6B099;
 }
 
 /* Main */

@@ -1,13 +1,12 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 h2 {
-    color: rgb(107, 78, 46);
+  color: rgb(107, 78, 46);
   display: block;
   font-size: 24px;
   font-weight: 700;
@@ -30,7 +29,6 @@ body {
   height: 100vh;
 }
 
-/* Sidebar */
 .sidebar {
   width: 220px;
   background: #EDE8E1;
@@ -65,11 +63,17 @@ body {
   flex: 1;
 }
 
-.main h1{
-    font-size: 48px;
-    color: #906A43;
-    margin: 30px 0px 0px 30px;
+.page-title {
+  margin-bottom: 30px;
+  font-size: 48px;
+  color: rgb(107, 78, 46);
+  position: relative;
+  left: 30px;
+  /* ซ้าย → ขวา */
+  top: 30px;
+  /* บน → ล่าง */
 }
+
 
 .topbar {
   height: 60px;
@@ -83,16 +87,16 @@ body {
 .toolbar {
   display: flex;
   align-items: center;
-   padding: 8px;
-   color: rgb(107, 78, 46);
+  padding: 8px;
+  color: rgb(107, 78, 46);
 }
 
 .toolbar-right {
-  margin-left: auto;          
+  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 10px;
-  color: rgb(107, 78, 46);                 
+  color: rgb(107, 78, 46);
 }
 
 .toolbar-right input {
@@ -141,7 +145,8 @@ table {
   color: rgb(107, 78, 46);
 }
 
-th, td {
+th,
+td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -155,22 +160,23 @@ th {
 }
 
 .action-col {
-    text-align: right;
-    padding-right: 12px;
+  text-align: right;
+  padding-right: 12px;
 }
 
 .edit {
-    width: 70px;
-    height: 50px;
-    object-fit: contain;
+  width: 70px;
+  height: 50px;
+  object-fit: contain;
 }
 
 .delete {
-    width: 70px;
-    height: 50px;
-    object-fit: contain;
+  width: 70px;
+  height: 50px;
+  object-fit: contain;
 }
 
+*/
 /* .pagination{
     margin-top: 30px;
     text-align: right;
@@ -186,4 +192,3 @@ th {
     color: #65453A;
     font-size: 16px;
 } */
-
