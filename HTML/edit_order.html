@@ -8,27 +8,33 @@
     <link rel="icon" href="Picture/logo.png">
     <link rel="stylesheet" href="../CSS/edit.css">
 </head>
+<script src="../JS/add_order.js"></script>
 
 <body>
     <main class="main">
         <header class="topbar"></header>
-
-        <form action="add_orderuser.html">
-            <h2 class="page-title">แก้ไขรายการสั่งซื้อ</h2>
+        <form action="add_order.html">
+            <h2 class="page-title">เพิ่มข้อมูล</h2>
             <div class="container">
                 <div class="card">
                     <div class="card-header">
                         <div class="header-row">
+
+                            <label for="order_id">เลขคำสั่งซื้อ :</label>
+                            <input type="text" id="order_id" name="order_id" readonly>
+
                             <label for="customer_id">รหัสลูกค้า :</label>
-                            <input type="text" id="customer_id" name="customer_id">
+                            <input type="text" id="customer_id" name="customer_id" readonly>
 
                             <label for="status">สถานะ :</label>
-                            <select class="select-status">
+                            <select id="status" class="select-status">
+
                                 <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
                                 <option value="">รอดำเนินการ</option>
                                 <option value="">กำลังดำเนินการ</option>
                                 <option value="">เสร็จสิ้น</option>
                             </select>
+
                         </div>
                     </div>
 
@@ -37,12 +43,12 @@
                             <div class="field">
                                 <div class="form-row">
                                     <label for="firstname">ชื่อ :</label>
-                                    <input type="text" id="firstname" name="firstname">
+                                    <input type="text" id="first_name" name="first_name">
                                 </div>
 
                                 <div class="form-row">
                                     <label for="lastname">นามสกุล :</label>
-                                    <input type="text" id="lastname" name="lastname">
+                                    <input type="text" id="last_name" name="last_name">
                                 </div>
                             </div>
                         </div>
@@ -50,7 +56,7 @@
                             <div class="field">
                                 <div class="form-row">
                                     <label for="note">ที่อยู่ :</label>
-                                    <textarea id="note" name="note"></textarea>
+                                    <textarea id="address" name="address"></textarea>
                                 </div>
                             </div>
 
@@ -110,21 +116,23 @@
                             </div>
                         </div>
 
+                        <div class="row">
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="roast_date">วันที่สั่งซื้อ :</label>
+                                    <input type="date" id="order_date" name="order_date">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="roast_date">วันที่จัดส่ง :</label>
+                                    <input type="date" id="delivery_date" name="delivery_date">
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="row three">
-                            <div class="field_t">
-                                <div class="form-row">
-                                    <label for="roast_date">วันที่คั่ว :</label>
-                                    <input type="date" id="roast_date" name="roast_date">
-                                </div>
-                            </div>
-
-                            <div class="field_t">
-                                <div class="form-row">
-                                    <label for="roast_time">เวลาที่คั่ว :</label>
-                                    <input type="time" id="roast_time" name="roast_time">
-                                </div>
-                            </div>
-
                             <div class="field_t">
                                 <div class="form-row">
                                     <label for="weight">ปริมาณ (กิโลกรัม) :</label>
@@ -151,18 +159,11 @@
 
                     <div class="actions">
                         <button type="reset" class="btn cancle" onclick="history.back()">ยกเลิก</button>
-                        <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
+                        <button type="submit" class="btn save">บันทึก</button>
                     </div>
-
                 </div>
             </div>
 
-            <script>
-                function savedata() {
-                    alert("บันทึกข้อมูลเรียบร้อย");
-                    history.back();
-                }
-            </script>
     </main>
 
 </body>

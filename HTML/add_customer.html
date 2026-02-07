@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Roasting</title>
+    <link rel="icon" href="Picture/logo.png">
+    <link rel="stylesheet" href="../CSS/edit.css">
+</head>
+
+<body>
+    <main class="main">
+        <header class="topbar"></header>
+
+        <form action="add_orderuser.html">
+            <h2 class="page-title-cus">เพิ่มลูกค้า</h2>
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="header-row">
+                            <label for="customer_id">รหัสลูกค้า :</label>
+                            <input type="text" id="customer_id" name="customer_id">
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="firstname">ชื่อ :</label>
+                                    <input type="text" id="firstname" name="firstname">
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="lastname">นามสกุล :</label>
+                                    <input type="text" id="lastname" name="lastname">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="note">ที่อยู่ :</label>
+                                    <textarea id="note" name="note"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="province">จังหวัด :</label>
+                                    <select id="province" name="province" required>
+                                        <option value="" disabled selected hidden>-- เลือกจังหวัด --</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- <div class="phone"> -->
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="phone">เบอร์โทร :</label>
+                                    <input type="text" id="phone" name="phone">
+                                </div>
+                            </div>
+                            <!-- </div> -->
+
+                            <!-- <div class="email"> -->
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="email">อีเมล :</label>
+                                    <input type="email" id="email" name="email">
+                                </div>
+                            </div>
+                            <!-- </div> -->
+                        </div>
+
+                    </div>
+
+                    <div class="actions">
+                        <button type="reset" class="btn cancle" onclick="history.back()">ยกเลิก</button>
+                        <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <script>
+                function savedata() {
+                    alert("บันทึกข้อมูลเรียบร้อย");
+                    history.back();
+                }
+            </script>
+    </main>
+
+</body>
+
+</html>

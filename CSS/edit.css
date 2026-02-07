@@ -243,3 +243,19 @@ textarea {
 .email {
     grid-column: 2 / 2;  
 } */
+
+
+/* ช่อง error แบบข้อความในช่อง */
+.input-error {
+    border: 2px solid red !important;
+
+}
+
+/* placeholder ตอน error */
+.input-error::placeholder {
+    color: red;
+}
+
+.select-error {
+    border: 2px solid red !important;
+}
