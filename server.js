@@ -43,10 +43,88 @@ const db = mysql.createConnection({
 });
 
 
-db.connect(err => {
-    if (err) {
-        console.log("❌ DB Error:", err);
-    } else {
-        console.log("✅ MariaDB Connected");
-    }
-}); 
+app.post("/add-order", (req, res) => {
+
+    const {
+        first_name,
+        last_name,
+        address,
+        province,
+        phone,
+        email,
+
+        order_status,
+        order_date,
+        delivery_date,
+
+        quantity,
+        price
+
+    } = req.body;
+
+
+    // 1. บันทึกลูกค้า
+    const sqlCustomer = `
+    INSERT INTO customer
+    (first_name, last_name, address, province, phone, email)
+    VALUES (?,?,?,?,?,?)
+  `;
+
+    db.query(sqlCustomer, [
+        first_name,
+        last_name,
+        address,
+        province,
+        phone,
+        email
+    ], (err, resultCustomer) => {
+
+        if (err) return res.send("❌ บันทึกลูกค้าไม่สำเร็จ");
+
+        const customer_id = resultCustomer.insertId;
+
+
+        // 2. บันทึก order
+        const sqlOrder = `
+      INSERT INTO orders
+      (customer_id, order_status, order_date, delivery_date)
+      VALUES (?,?,?,?)
+    `;
+
+        db.query(sqlOrder, [
+            customer_id,
+            order_status,
+            order_date,
+            delivery_date
+        ], (err, resultOrder) => {
+
+            if (err) return res.send("❌ บันทึก Order ไม่สำเร็จ");
+
+            const order_id = resultOrder.insertId;
+
+
+            // 3. บันทึก orderdetails
+            const sqlDetail = `
+        INSERT INTO orderdetails
+        (order_id, quantity, price)
+        VALUES (?,?,?)
+      `;
+
+            db.query(sqlDetail, [
+                order_id,
+                quantity,
+                price
+            ], (err) => {
+
+                if (err) return res.send("❌ บันทึกรายละเอียดไม่สำเร็จ");
+
+                res.send("✅ บันทึก Order สำเร็จแล้ว");
+
+            });
+
+        });
+
+    });
+
+});
+

@@ -119,16 +119,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* ตรวจฟอร์ม */
-    const form = document.querySelector("form");
+    // const form = document.querySelector("form");
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
+    // // form.addEventListener("submit", function (e) {
+    // //     // e.preventDefault();
 
-        if (validateForm()) {
-            alert("✅ บันทึกข้อมูลเรียบร้อย");
-            form.submit();
-        }
-    });
+    //     if (validateForm()) {
+    //         alert("✅ บันทึกข้อมูลเรียบร้อย");
+    //         form.submit();
+    //     }
+    // });
 
 });
 
@@ -150,7 +150,7 @@ function validateForm() {
     const phone = document.getElementById("phone");
     const email = document.getElementById("email");
     const province = document.getElementById("province");
-    const status = document.getElementById("status");
+    const status = document.getElementById("order_status");
 
 
     const process = document.querySelector(".select-process");

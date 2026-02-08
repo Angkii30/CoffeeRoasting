@@ -13,7 +13,7 @@
 <body>
     <main class="main">
         <header class="topbar"></header>
-        <form action="add_order.html">
+        <form action="/add-order" method="POST">
             <h2 class="page-title">เพิ่มข้อมูล</h2>
             <div class="container">
                 <div class="card">
@@ -27,13 +27,17 @@
                             <input type="text" id="customer_id" name="customer_id" readonly>
 
                             <label for="status">สถานะ :</label>
-                            <select id="status" class="select-status">
+                            <select id="status" name="order_status">
 
                                 <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
-                                <option value="">รอดำเนินการ</option>
-                                <option value="">กำลังดำเนินการ</option>
-                                <option value="">เสร็จสิ้น</option>
+
+                                <option value="pending">รอดำเนินการ</option>
+                                <option value="processing">กำลังดำเนินการ</option>
+                                <option value="completed">เสร็จสิ้น</option>
+                                <option value="cancelled">ยกเลิก</option>
+
                             </select>
+
 
                         </div>
                     </div>
@@ -92,7 +96,7 @@
                             <div class="field">
                                 <div class="form-row">
                                     <label for="">กระบวนการ : </label>
-                                    <select class="select-process">
+                                    <select class="select-process" name="process">
                                         <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
                                         <option value="washed">Washed Process</option>
                                         <option value="honey">Honey Process</option>
@@ -104,7 +108,7 @@
                             <div class="field">
                                 <div class="form-row">
                                     <label for="">ระดับการคั่ว : </label>
-                                    <select class="select-roast">
+                                    <select class="select-roast" name="roast_level">
                                         <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
                                         <option value="light">คั่วอ่อน</option>
                                         <option value="medium">คั่วกลาง</option>
