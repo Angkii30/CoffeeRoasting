@@ -30,6 +30,18 @@ router.get("/add_stock", (req, res) => {
     res.render("add_stock");
 });
 
+router.get("/add_stockkala", (req, res) => {
+    res.render("add_stockkala");
+});
+
+router.get("/add_stocksan", (req, res) => {
+    res.render("add_stocksan");
+});
+
+router.get("/add_stockroast", (req, res) => {
+    res.render("add_stockroast");
+});
+
 /* แก้ไข order */
 router.get("/edit_order", (req, res) => {
     res.render("edit_order");

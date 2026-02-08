@@ -110,17 +110,29 @@ h1 {
 
 .card-header {
     background-color: #D6BEA1;
-    padding: 15px 20px;
-    border-radius: 16px 16px 0 0;
-    font-size: 18px;
+    height: 70px;                 /* ความสูงแถบสีน้ำตาล */
+    border-radius: 20px 20px 0 0;
+}
+
+.title {
+    position: absolute;
+    top: 16px;                    /* ปรับตำแหน่งแนวตั้ง */
+    left: 32px;                   /* มุมซ้าย */
+    background: #D6BEA1;           /* สีเดียวกับ header */
+    padding: 6px 18px;
+    border-radius: 18px;
+    margin: 0;
+    font-size: 24px;
     font-weight: bold;
     color: rgb(107, 78, 46);
+    z-index: 10;
 }
 
 .card-body {
     padding: 25px;
     padding-bottom: 60px;
 }
+
 
 .form-row {
     display: flex;
