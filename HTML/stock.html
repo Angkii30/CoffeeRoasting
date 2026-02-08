@@ -33,13 +33,12 @@
                         เพิ่มรายการ</button>
 
                     <div class="toolbar-right">
-                        <input type="text" placeholder="ค้นหารายการ ">
-
-                        <input type="date">
+                        <input type="text" id="searchInput" placeholder="ค้นหารายการ ">
+                        <input type="date" id="dateFilter">
                     </div>
                 </div>
 
-                <table>
+                <table class="stockTable">
                     <thead>
                         <tr>
                             <th>สายพันธุ์</th>
@@ -53,7 +52,7 @@
                     <tbody>
                         <tr>
                             <td>อราบิก้า</td>
-                            <td>1</td>
+                            <td class="qty">1</td>
                             <td>12/01/68</td>
                             <td>บ้านกาแฟ</td>
                             <td>ลุง</td>
@@ -61,7 +60,7 @@
                                 <a href="edit_stock.html">
                                     <img src="Picture/edit.png" alt="แก้ไข" class="edit">
                                 </a>
-                                <img src="Picture/delete.png" alt="ลบ" class="delete" onclick="">
+                                <img src="Picture/delete.png" alt="ลบ" class="delete" class="delete">
                             </td>
                         </tr>
                     </tbody>
@@ -78,7 +77,7 @@
             </section>
         </main>
     </div>
-
+    <script src="../JS/stock.js"></script>
 </body>
 
 </html>
