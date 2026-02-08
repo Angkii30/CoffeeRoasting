@@ -121,8 +121,8 @@ document.addEventListener("DOMContentLoaded", function () {
     /* ตรวจฟอร์ม */
     // const form = document.querySelector("form");
 
-    // // form.addEventListener("submit", function (e) {
-    // //     // e.preventDefault();
+    // form.addEventListener("submit", function (e) {
+    //     e.preventDefault();
 
     //     if (validateForm()) {
     //         alert("✅ บันทึกข้อมูลเรียบร้อย");
