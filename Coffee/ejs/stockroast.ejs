@@ -17,11 +17,11 @@
         <aside class="sidebar">
             <h2 class="logo">Coffee Roasting</h2>
             <ul class="menu">
-                <li onclick="window.location.href='../แดชบอร์ดลองโล้ะ/index.html'">หน้าแรก</li>
-                <li class="active" onclick="window.location.href='../HTML/stockall.html'">คลังสินค้า</li>
-                <li onclick="window.location.href='../HTML/customer.html'">รายชื่อลูกค้า</li>
-                <li onclick="window.location.href='plan.html'">รายการสั่งซื้อ</li>
-                <li onclick="window.location.href='../HTML/user.html'">จัดการสิทธิ์</li>
+                <li onclick="window.location.href='../ejs/index.ejs'">หน้าแรก</li>
+                <li class="active" onclick="window.location.href='../ejs/stockall.ejs'">คลังสินค้า</li>
+                <li onclick="window.location.href='../ejs/customer.ejs'">รายชื่อลูกค้า</li>
+                <li onclick="window.location.href='../ejs/plan.ejs'">รายการสั่งซื้อ</li>
+                <li onclick="window.location.href='../ejs/user.ejs'">จัดการสิทธิ์</li>
             </ul>
         </aside>
 
@@ -31,7 +31,7 @@
 
             <section class="content">
                 <div class="toolbar">
-                    <button class="btn" onclick="window.location.href='add_stock.html'">+ เพิ่มรายการ</button>
+                    <button class="btn" onclick="window.location.href='../ejs/add_stock.ejs'">+ เพิ่มรายการ</button>
 
                     <div class="toolbar-right">
                         <input type="text" placeholder="ค้นหารายการ">
@@ -65,7 +65,7 @@
                                 <!-- รูปไอคอนแจ้งเตือนสถานนะ (เชื่อมกับดาต้า) -->
                             </td>
                             <td class="action-col">
-                                <a href="edit_stock.html">
+                                <a href="../ejs/edit_stock.ejs">
                                     <img src="Picture/edit.png" alt="แก้ไข" class="edit">
                                 </a>
                                 <img src="Picture/delete.png" alt="ลบ" class="delete" onclick="">
