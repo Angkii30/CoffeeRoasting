@@ -1,12 +1,21 @@
 require("dotenv").config();
 
 const express = require("express");
+const path = require("path");
 const app = express();
 const port = 3000;
 
 /* ตั้งค่า */
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "Coffee/ejs"));
+app.use(express.static(path.join(__dirname, "Coffee")));
+
+app.get("/add-order", (req, res) => {
+    res.render("add_order");
+});
+
 
 /* หน้าแรก */
 app.get("/", (req, res) => {
@@ -40,4 +49,4 @@ db.connect(err => {
     } else {
         console.log("✅ MariaDB Connected");
     }
-});
+}); 
