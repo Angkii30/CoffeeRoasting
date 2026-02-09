@@ -17,14 +17,14 @@ body {
 
 .page-title {
     text-align: left;
-    font-size: 26px;
+    font-size: 35px;
     font-weight: bold;
     color: #8B6F47;
 
     position: relative;
     left: 340px;
     /* ซ้าย → ขวา */
-    top: 80px;
+    top: 50px;
     /* บน → ล่าง */
 
 }
@@ -77,6 +77,10 @@ h1 {
     display: flex;
     align-items: center;
     gap: 10px;
+
+    height: 100%;
+    /* สำคัญมาก */
+    padding: 0 20px;
 }
 
 .header-row label {
@@ -85,7 +89,7 @@ h1 {
 }
 
 .header-row input {
-    width: 250px;
+    width: 200px;
 }
 
 .header-row select {
@@ -110,15 +114,19 @@ h1 {
 
 .card-header {
     background-color: #D6BEA1;
-    height: 70px;                 /* ความสูงแถบสีน้ำตาล */
+    height: 70px;
+    /* ความสูงแถบสีน้ำตาล */
     border-radius: 20px 20px 0 0;
 }
 
 .title {
     position: absolute;
-    top: 16px;                    /* ปรับตำแหน่งแนวตั้ง */
-    left: 32px;                   /* มุมซ้าย */
-    background: #D6BEA1;           /* สีเดียวกับ header */
+    top: 16px;
+    /* ปรับตำแหน่งแนวตั้ง */
+    left: 32px;
+    /* มุมซ้าย */
+    background: #D6BEA1;
+    /* สีเดียวกับ header */
     padding: 6px 18px;
     border-radius: 18px;
     margin: 0;
@@ -171,7 +179,7 @@ h1 {
 label {
     color: #5A3B23;
     min-width: 80px;
-    margin-right: 15px;
+    margin-right: 10px;
     white-space: nowrap;
 }
 
@@ -245,8 +253,10 @@ textarea {
 
 .field_t input,
 .field_t select {
-    width: 120px;
+    width: 130px;
 }
+
+
 
 /* .phone {
     grid-column: 1 / 2;   

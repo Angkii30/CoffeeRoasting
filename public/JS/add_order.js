@@ -1,3 +1,4 @@
+//เหลือ โชว์order_id กับ customer_id (ยังไม่ได้เชื่อมกับฐานข้อมูล)
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -119,16 +120,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* ตรวจฟอร์ม */
-    // const form = document.querySelector("form");
+    const form = document.querySelector("form");
 
-    // form.addEventListener("submit", function (e) {
-    //     e.preventDefault();
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    //     if (validateForm()) {
-    //         alert("✅ บันทึกข้อมูลเรียบร้อย");
-    //         form.submit();
-    //     }
-    // });
+        if (validateForm()) {
+            alert("✅ บันทึกข้อมูลเรียบร้อย");
+            form.submit();
+        }
+    });
 
 });
 
@@ -154,10 +155,10 @@ function validateForm() {
 
 
     const process = document.querySelector(".select-process");
-    const roast = document.querySelector(".select-roast");
+    const roast = document.querySelector(".select-lavel");
     const orderDate = document.getElementById("order_date");
     const deliveryDate = document.getElementById("delivery_date");
-    const weight = document.getElementById("weight");
+    const pack = document.querySelector(".select-size");
     const quantity = document.getElementById("quantity");
     const price = document.getElementById("price");
 
@@ -166,7 +167,7 @@ function validateForm() {
     [
         fname, lname, address, phone, email,
         province, status, process, roast,
-        weight, quantity, price,
+        pack, quantity, price,
         orderDate, deliveryDate
     ].forEach(el => clearError(el));
 
@@ -237,13 +238,16 @@ function validateForm() {
         valid = false;
     }
 
+    // ตัดช่องว่างหน้า-หลัง
+    email.value = email.value.trim();
+
     if (!email.value.includes("@")) {
         showError(email, "อีเมลไม่ถูกต้อง");
         valid = false;
     }
 
-    if (weight.value === "" || weight.value <= 0) {
-        showError(weight, "*");
+    if (pack.value === "" || pack.value === "pack_size") {
+        showError(pack, "กรุณาเลือกขนาด");
         valid = false;
     }
 
@@ -317,3 +321,35 @@ function showErrorSelect(select) {
         select.removeEventListener("change", clear);
     });
 }
+
+function clearError(input) {
+
+    if (!input) return; // กันพัง
+
+    input.classList.remove("input-error");
+
+    const error = input.parentElement?.querySelector(".error-text");
+
+    if (error) {
+        error.remove();
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const quantity = document.getElementById("quantity");
+    const price = document.getElementById("price");
+    const total = document.getElementById("total_price");
+
+    function calculateTotal() {
+
+        const q = parseFloat(quantity.value) || 0;
+        const p = parseFloat(price.value) || 0;
+
+        total.value = q * p;
+    }
+
+    quantity.addEventListener("input", calculateTotal);
+    price.addEventListener("input", calculateTotal);
+
+});
