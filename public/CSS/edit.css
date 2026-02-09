@@ -119,6 +119,22 @@ h1 {
     border-radius: 20px 20px 0 0;
 }
 
+.card-header-user {
+    background-color: #D6BEA1;
+    height: 70px;
+    border-radius: 20px 20px 0 0;
+
+    /* จัดให้อยู่ตรงกลาง */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* สี + ตัวอักษร */
+    color: #5A3B23;
+    font-size: 22px;
+    font-weight: bold;
+}
+
 .title {
     position: absolute;
     top: 16px;
@@ -282,8 +298,8 @@ textarea {
     border: 2px solid red !important;
 }
 
-.error-text {
+/* .error-text {
     color: red;
     font-size: 12px;
     margin-top: 3px;
-}
+} */
