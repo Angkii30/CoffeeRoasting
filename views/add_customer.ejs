@@ -8,19 +8,22 @@
     <link rel="icon" href="Picture/logo.png">
     <link rel="stylesheet" href="../CSS/edit.css">
 </head>
+<script src="../JS/add_order.js"></script>
 
 <body>
     <main class="main">
         <header class="topbar"></header>
 
-        <form action="add_customer.html">
+        <!-- <form id="customerForm"> -->
+        <form id="customerForm" action="/add_customer" method="POST" novalidate>
+
             <h2 class="page-title-cus">เพิ่มลูกค้า</h2>
             <div class="container">
                 <div class="card">
                     <div class="card-header">
                         <div class="header-row">
                             <label for="customer_id">รหัสลูกค้า :</label>
-                            <input type="text" id="customer_id" name="customer_id">
+                            <input type="text" id="customer_id" name="customer_id" readonly>
                         </div>
                     </div>
 
@@ -29,12 +32,12 @@
                             <div class="field">
                                 <div class="form-row">
                                     <label for="firstname">ชื่อ :</label>
-                                    <input type="text" id="firstname" name="firstname">
+                                    <input type="text" id="first_name" name="first_name">
                                 </div>
 
                                 <div class="form-row">
                                     <label for="lastname">นามสกุล :</label>
-                                    <input type="text" id="last_name" name="lastname">
+                                    <input type="text" id="last_name" name="last_name">
                                 </div>
                             </div>
                         </div>
@@ -78,18 +81,19 @@
 
                     <div class="actions">
                         <button type="reset" class="btn cancle" onclick="history.back()">ยกเลิก</button>
-                        <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
+                        <button type="submit" class="btn save">บันทึก</button>
+
                     </div>
 
                 </div>
             </div>
 
-            <script>
+            <!-- <script>
                 function savedata() {
                     alert("บันทึกข้อมูลเรียบร้อย");
                     history.back();
                 }
-            </script>
+            </script> -->
     </main>
 
 </body>
