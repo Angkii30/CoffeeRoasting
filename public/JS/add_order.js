@@ -233,18 +233,31 @@ function validateForm() {
     }
 
 
-    if (!/^[0-9]{9,10}$/.test(phone.value)) {
+    /* เบอร์โทร */
+    phone.value = phone.value.trim();
+
+    if (phone.value === "") {
+        showError(phone, "กรุณากรอกเบอร์โทร");
+        valid = false;
+
+    } else if (!/^[0-9]{9,10}$/.test(phone.value)) {
         showError(phone, "เบอร์โทรไม่ถูกต้อง");
         valid = false;
     }
 
-    // ตัดช่องว่างหน้า-หลัง
+
+    /* อีเมล */
     email.value = email.value.trim();
 
-    if (!email.value.includes("@")) {
+    if (email.value === "") {
+        showError(email, "กรุณากรอกอีเมล");
+        valid = false;
+
+    } else if (!email.value.includes("@")) {
         showError(email, "อีเมลไม่ถูกต้อง");
         valid = false;
     }
+
 
     if (pack.value === "" || pack.value === "pack_size") {
         showError(pack, "กรุณาเลือกขนาด");
@@ -289,16 +302,8 @@ function showError(input, message) {
     });
 }
 
-function clearError(input) {
 
-    input.classList.remove("input-error");
 
-    const error = input.parentElement.querySelector(".error-text");
-
-    if (error) {
-        error.remove();
-    }
-}
 
 function showErrorTextarea(textarea, message) {
 
@@ -312,9 +317,17 @@ function showErrorTextarea(textarea, message) {
     });
 }
 
-function showErrorSelect(select) {
+function showErrorSelect(select, message) {
 
     select.classList.add("select-error");
+
+    // ใส่ placeholder แบบหลอก (option แรก)
+    if (message) {
+        const firstOption = select.querySelector("option[value='']");
+        if (firstOption) {
+            firstOption.textContent = message;
+        }
+    }
 
     select.addEventListener("change", function clear() {
         select.classList.remove("select-error");
@@ -322,9 +335,10 @@ function showErrorSelect(select) {
     });
 }
 
+
 function clearError(input) {
 
-    if (!input) return; // กันพัง
+    if (!input) return;
 
     input.classList.remove("input-error");
 

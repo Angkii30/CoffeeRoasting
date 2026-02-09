@@ -61,14 +61,7 @@ function validateForm() {
     const email = document.getElementById("email");
     const province = document.getElementById("province");
 
-    // ล้าง error เก่า
-    [
-        fname, lname, address,
-        phone, email, province
-    ].forEach(el => clearError(el));
-
-
-    /* ===== ตรวจทีละช่อง ===== */
+    [fname, lname, address, phone, email, province].forEach(el => clearError(el));
 
     if (fname.value.trim() === "") {
         showError(fname, "กรุณากรอกชื่อ");
@@ -81,23 +74,19 @@ function validateForm() {
     }
 
     if (address.value.trim() === "") {
-        showError(address, "กรุณากรอกที่อยู่");
+        showErrorTextarea(address, "กรุณากรอกที่อยู่");
         valid = false;
     }
 
     if (province.value === "") {
-        showErrorSelect(province, "กรุณาเลือกจังหวัด");
+        showErrorSelect(province);
         valid = false;
     }
 
-    /* เบอร์โทร */
     if (!/^[0-9]{9,10}$/.test(phone.value)) {
         showError(phone, "เบอร์โทรไม่ถูกต้อง");
         valid = false;
     }
-
-    /* อีเมล */
-    email.value = email.value.trim();
 
     if (!email.value.includes("@")) {
         showError(email, "อีเมลไม่ถูกต้อง");
@@ -116,41 +105,50 @@ function showError(input, message) {
 
     input.classList.add("input-error");
 
-    // ลบข้อความเก่าก่อน
-    let error = input.parentElement.querySelector(".error-text");
-    if (error) error.remove();
+    // แสดงข้อความ error ใต้ placeholder
+    input.placeholder = message;
 
-    // สร้างข้อความใหม่
-    const small = document.createElement("div");
-    small.className = "error-text";
-    small.innerText = message;
-
-    input.parentElement.appendChild(small);
+    input.addEventListener("input", function clear() {
+        input.classList.remove("input-error");
+        input.placeholder = "";
+        input.removeEventListener("input", clear);
+    });
 }
 
 
-/* สำหรับ select */
-function showErrorSelect(select, message) {
 
-    select.classList.add("input-error");
 
-    let error = select.parentElement.querySelector(".error-text");
-    if (error) error.remove();
 
-    const small = document.createElement("div");
-    small.className = "error-text";
-    small.innerText = message;
+function showErrorTextarea(textarea, message) {
 
-    select.parentElement.appendChild(small);
+    textarea.classList.add("input-error");
+    textarea.placeholder = message;
+
+    textarea.addEventListener("input", function clear() {
+        textarea.classList.remove("input-error");
+        textarea.placeholder = "";
+        textarea.removeEventListener("input", clear);
+    });
+}
+
+function showErrorSelect(select) {
+
+    select.classList.add("select-error");
+
+    select.addEventListener("change", function clear() {
+        select.classList.remove("select-error");
+        select.removeEventListener("change", clear);
+    });
 }
 
 
-/* ล้าง error */
+
 function clearError(input) {
 
-    input.classList.remove("input-error");
+    if (!input) return;
 
-    let error = input.parentElement.querySelector(".error-text");
-    if (error) error.remove();
+    input.classList.remove("input-error");
+    input.classList.remove("select-error");
+
 }
 
