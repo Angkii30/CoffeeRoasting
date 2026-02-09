@@ -1,28 +1,27 @@
 require("dotenv").config();
 const express = require("express");
 const path = require("path");
-const mysql = require("mysql2");
 
 const pageRoutes = require("./routes/pages");
 
 const app = express();
-const port = 3000;
-
-/* Middleware */
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+const PORT = process.env.PORT || 3000;
 
 /* View engine */
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+/* Middleware */
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 /* Static files */
 app.use(express.static(path.join(__dirname, "public")));
 
-/* Routes (ต้องอยู่หลัง setup ทุกอย่าง) */
+/* Routes */
 app.use("/", pageRoutes);
 
-/* Start */
-app.listen(port, () => {
-    console.log("🚀 Server → http://localhost:" + port);
+/* Start server (มีแค่รอบเดียวพอ) */
+app.listen(PORT, () => {
+    console.log("Server → http://localhost:" + PORT);
 });
