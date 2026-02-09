@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer</title>
-    <link rel="stylesheet" href="../CSS/stock.css">
-    <link rel="icon" href="Picture/logo.png">
+    <link rel="stylesheet" href="/Coffee/ejs/CSS/stock.css">
+    <link rel="icon" href="/Coffee/ejs/Picture/logo.png">
 </head>
 
 <body>
@@ -14,11 +14,11 @@
         <aside class="sidebar">
             <h2>Coffee Roasting</h2>
             <ul>
-                <li onclick="window.location.href='../ejs/index.ejs'">หน้าแรก</li>
-                <li onclick="window.location.href='../ejs/stockall.ejs'">คลังสินค้า</li>
-                <li class="active" onclick="window.location.href='../ejs/customer.ejs'">รายชื่อลูกค้า</li>
-                <li onclick="window.location.href='../ejs/plan.ejs'">รายการสั่งซื้อ</li>
-                <li onclick="window.location.href='../ejs/user.ejs'">จัดการสิทธิ์</li>
+                <li onclick="window.location.href='/Coffee/ejs/index'">หน้าแรก</li>
+                <li onclick="window.location.href='/Coffee/ejs/stockall'">คลังสินค้า</li>
+                <li class="active" onclick="window.location.href='/Coffee/ejs/customer'">รายชื่อลูกค้า</li>
+                <li onclick="window.location.href='/Coffee/ejs/plan'">รายการสั่งซื้อ</li>
+                <li onclick="window.location.href='/Coffee/ejs/user'">จัดการสิทธิ์</li>
             </ul>
         </aside>
 
@@ -27,7 +27,7 @@
             <h1 class="page-title">รายชื่อลูกค้า</h1>
             <section class="content">
                 <div class="toolbar">
-                    <button class="btn" onclick="window.location.href='../ejs/add_customer.ejs'">+
+                    <button class="btn" onclick="window.location.href='/Coffee/ejs/add_customer'">+
                         เพิ่มลูกค้า</button>
 
                     <div class="toolbar-right">
@@ -57,10 +57,10 @@
                             <td>3</td>
                             <td>0123456789</td>
                             <td class="action-col">
-                                <a href="../ejs/edit_customer.ejs">
-                                    <img src="Picture/edit.png" alt="แก้ไข" class="edit">
+                                <a href="/Coffee/ejs/edit_customer">
+                                    <img src="/Coffee/ejs/Picture/edit.png" alt="แก้ไข" class="edit">
                                 </a>
-                                <img src="Picture/delete.png" alt="ลบ" class="delete" onclick="">
+                                <img src="/Coffee/ejs/Picture/delete.png" alt="ลบ" class="delete" onclick="">
                             </td>
                         </tr>
                     </tbody>
