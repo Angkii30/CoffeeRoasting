@@ -29,21 +29,26 @@ document.addEventListener("DOMContentLoaded", function () {
         provinceSelect.appendChild(option);
     });
 
+});
+/* ===== form ===== */
 
-    /* ===== form ===== */
+document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.getElementById("customerForm");
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
+    if (!form) return;
 
-        if (validateForm()) {
-            alert("✅ บันทึกข้อมูลเรียบร้อยแล้ว");
-            form.submit();
+    form.addEventListener("submit", function (e) {
+
+        if (!validateForm()) {
+            e.preventDefault();
         }
+
     });
 
 });
+
+
 
 
 
@@ -151,4 +156,5 @@ function clearError(input) {
     input.classList.remove("select-error");
 
 }
+
 

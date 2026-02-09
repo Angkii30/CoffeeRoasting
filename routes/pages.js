@@ -96,6 +96,13 @@ router.get("/customer", (req, res) => {
     res.render("customer");
 });
 
+////////////customer/////////////
+
+router.get("/add_customer", (req, res) => {
+    res.render("add_customer", { query: req.query });
+});
+
+
 router.get("/plan", (req, res) => {
     res.render("plan");
 });
@@ -127,10 +134,6 @@ router.get("/add_stockroast", (req, res) => {
 
 router.get("/add_stocksan", (req, res) => {
     res.render("add_stocksan");
-});
-
-router.get("/add_user", (req, res) => {
-    res.render("add_user");
 });
 
 router.get("/add_user", (req, res) => {
