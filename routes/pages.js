@@ -80,6 +80,18 @@ router.get("/stock", (req, res) => {
     res.render("stock");
 });
 
+router.get("/stockkala", (req, res) => {
+    res.render("stockkala");
+});
+
+router.get("/stockroast", (req, res) => {
+    res.render("stockroast");
+});
+
+router.get("/stocksan", (req, res) => {
+    res.render("stocksan");
+});
+
 router.get("/customer", (req, res) => {
     res.render("customer");
 });
@@ -96,4 +108,59 @@ router.get("/add_order", (req, res) => {
     res.render("add_order");
 });
 
+router.get("/add_customer", (req, res) => {
+    res.render("add_customer");
+});
+
+router.get("/add_stock", (req, res) => {
+    res.render("add_stock");
+});
+
+router.get("/add_stockkala", (req, res) => {
+    res.render("add_stockkala");
+});
+
+router.get("/add_stockroast", (req, res) => {
+    res.render("add_stockroast");
+});
+
+router.get("/add_stocksan", (req, res) => {
+    res.render("add_stocksan");
+});
+
+router.get("/add_user", (req, res) => {
+    res.render("add_user");
+});
+
+router.get("/add_user", (req, res) => {
+    res.render("add_user");
+});
+
+router.get("/edit_customer", (req, res) => {
+    res.render("edit_customer");
+});
+
+router.get("/edit_stock", (req, res) => {
+    res.render("edit_stock");
+});
+
+router.get("/edit_stockkala", (req, res) => {
+    res.render("edit_stockkala");
+});
+
+router.get("/edit_stockroast", (req, res) => {
+    res.render("edit_stockroast");
+});
+
+router.get("/edit_stocksan", (req, res) => {
+    res.render("edit_stocksan");
+});
+
+router.get("/edit_user", (req, res) => {
+    res.render("edit_user");
+});
+
+router.get("/edit_order", (req, res) => {
+    res.render("edit_order");
+});
 module.exports = router;
