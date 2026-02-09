@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Roasting</title>
     <link rel="icon" href="/Coffee/ejs/Picture/logo.png">
-    <link rel="stylesheet" href="/Coffee/ejs/CSS/edit.css">
+    <link rel="stylesheet" href="../CSS/edit.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <header class="topbar"></header>
 
         <form action="add_stock" method="post">
-            <h2 class="page-title">เพิ่มคลังสินค้า</h2>
+            <h2 class="page-title-r">เพิ่มคลังสินค้า</h2>
             <div class="container">
                 <div class="card">
                     <div class="card-header">
@@ -38,20 +38,20 @@
 
                                 <div class="radio-group">
                                     <label class="radio-label">
-                                        <input type="radio" name="type"> อาราบิก้า
+                                        <input type="radio" name="species" value="arabica"> อาราบิก้า
                                     </label>
                                     <label class="radio-label">
-                                        <input type="radio" name="type"> โรบัสต้า
+                                        <input type="radio" name="species" value="robusta"> โรบัสต้า
                                     </label>
                                 </div>
                             </div>
 
-                            <div class="field">
+                            <!-- <div class="field">
                                 <div class="form-row">
                                     <label for="note">แหล่งที่มา :</label>
                                     <textarea id="note" name="note"></textarea>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
 
@@ -59,7 +59,7 @@
                             <div class="field">
                                 <div class="form-row">
                                     <label for="">กระบวนการ : </label>
-                                    <select class="select-process">
+                                    <select name="process_method" class="select-process">
                                         <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
                                         <option value="washed">Washed Process</option>
                                         <option value="honey">Honey Process</option>
@@ -71,7 +71,7 @@
                             <div class="field">
                                 <div class="form-row">
                                     <label for="">ระดับการคั่ว : </label>
-                                    <select class="select-roast">
+                                    <select name="roast_level" class="select-roast">
                                         <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
                                         <option value="light">คั่วอ่อน</option>
                                         <option value="medium">คั่วกลาง</option>
@@ -93,29 +93,53 @@
 
                             <div class="field_t">
                                 <div class="form-row">
-                                    <label for="weight">ปริมาณ (กิโลกรัม) :</label>
-                                    <input type="number" id="weight" name="weight" step="0.01">
+                                    <label>ปริมาณก่อนคั่ว (กิโลกรัม) :</label>
+                                    <input type="number" name="weight_before">
+
+                                    <label>ปริมาณหลังคั่ว (กิโลกรัม) :</label>
+                                    <input type="number" name="weight_after">
                                 </div>
                             </div>
 
                             <div class="field_t">
                                 <div class="form-row">
-                                    <label for="quantity">จำนวน :</label>
-                                    <input type="number" id="quantity" name="quantity">
+                                    <label for="quantity">เปอร์เซ็นสูญเสีย :</label>
+                                    <input type="number" id="loss_percent" name="loss_percent">
                                 </div>
                             </div>
 
                             <div class="field_t">
                                 <div class="form-row">
-                                    <label for="price">ราคา :</label>
-                                    <input type="number" id="price" name="price">
+                                    <label for="price">วันหมดอายุ :</label>
+                                    <input type="date" id="exprie_date" name="exprie_date">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="price">ขนาดแพ็ค :</label>
+                                    <input type="text" id="pack_size" name="pack_size">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="price">จำนวนแพ็ค :</label>
+                                    <input type="number" id="pack_count" name="pack_count">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="note">ราคาแพ็ค :</label>
+                                    <input type="text" id="sell_price" name="sell_price">
                                 </div>
                             </div>
 
                             <div class="field_t">
                                 <div class="form-row">
                                     <label for="note">ผู้รับผิดชอบ :</label>
-                                    <input type="text" id="staff" name="staffname">
+                                    <input type="text" id="role" name="role">
                                 </div>
                             </div>
                         </div>

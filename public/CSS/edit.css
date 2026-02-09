@@ -25,6 +25,47 @@ body {
     left: 340px;
     /* ซ้าย → ขวา */
     top: 50px;
+    /* บน → ล่าง  */
+}
+
+.page-title-kl {
+    text-align: left;
+    font-size: 35px;
+    font-weight: bold;
+    color: #8B6F47;
+
+    position: relative;
+    left: 340px;
+    /* ซ้าย → ขวา */
+    top: 70px;
+    /* บน → ล่าง */
+
+}
+
+.page-title-san {
+    text-align: left;
+    font-size: 35px;
+    font-weight: bold;
+    color: #8B6F47;
+
+    position: relative;
+    left: 340px;
+    /* ซ้าย → ขวา */
+    top: 70px;
+    /* บน → ล่าง */
+
+}
+
+.page-title-r {
+    text-align: left;
+    font-size: 35px;
+    font-weight: bold;
+    color: #8B6F47;
+
+    position: relative;
+    left: 340px;
+    /* ซ้าย → ขวา */
+    top: 70px;
     /* บน → ล่าง */
 
 }
@@ -71,6 +112,7 @@ h1 {
     justify-content: center;
     align-items: center;
     height: calc(100vh - 60px);
+    margin-top: 0;
 }
 
 .header-row {
@@ -161,20 +203,26 @@ h1 {
     gap: 5px;
 } */
 
-.radio-group input[type="radio"] {
+.radio-group {
     display: flex;
-    /* flex-direction: row; */
-    align-items: center;
-    gap: 15px
+    flex-direction: column;   /* เรียงบน-ล่าง */
+    gap: 4px;                 /* ระยะห่างระหว่างแต่ละตัว (ปรับได้) */
 }
 
+
 .radio-label {
-    min-width: auto;
-    margin-right: 0;
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 6px;          /* ระยะระหว่างปุ่มกับข้อความ */
+    margin: 0;         /* ตัด margin ที่ทำให้ห่าง */
+    line-height: 1.2;  /* ลดความสูงบรรทัด */
 }
+
+input[type="radio"] {
+    width: auto !important;
+    flex: none;
+}
+
 
 label {
     color: #5A3B23;
@@ -183,7 +231,7 @@ label {
     white-space: nowrap;
 }
 
-input,
+input:not([type="radio"]),
 select,
 textarea {
     width: 100%;
@@ -192,6 +240,8 @@ textarea {
     border: 1px solid #c8a57a;
     font-size: 14px;
 }
+
+
 
 textarea {
     resize: none;

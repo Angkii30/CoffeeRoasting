@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Roasting</title>
     <link rel="icon" href="/Coffee/ejs/Picture/logo.png">
-    <link rel="stylesheet" href="/Coffee/ejs/CSS/edit.css">
+    <link rel="stylesheet" href="../CSS/edit.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <header class="topbar"></header>
 
         <form action="add_stock" method="post">
-            <h2 class="page-title">เพิ่มคลังสินค้า</h2>
+            <h2 class="page-title-san">เพิ่มคลังสินค้า</h2>
             <div class="container">
                 <div class="card">
                     <div class="card-header">
@@ -38,20 +38,20 @@
 
                                 <div class="radio-group">
                                     <label class="radio-label">
-                                        <input type="radio" name="type"> อาราบิก้า
+                                        <input type="radio" name="species" value="arabica"> อาราบิก้า
                                     </label>
                                     <label class="radio-label">
-                                        <input type="radio" name="type"> โรบัสต้า
+                                        <input type="radio" name="species" value="robusta"> โรบัสต้า
                                     </label>
                                 </div>
                             </div>
 
-                            <div class="field">
+                            <!-- <div class="field">
                                 <div class="form-row">
                                     <label for="note">แหล่งที่มา :</label>
                                     <textarea id="note" name="note"></textarea>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
 
@@ -68,7 +68,7 @@
                                 </div>
                             </div>
 
-                            <div class="field">
+                            <!-- <div class="field">
                                 <div class="form-row">
                                     <label for="">ระดับการคั่ว : </label>
                                     <select class="select-roast">
@@ -80,13 +80,13 @@
                                         <option value="dark">คั่วเข้ม</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="row three">
                             <div class="field_t">
                                 <div class="form-row">
-                                    <label for="roast_date">วันที่คั่ว :</label>
+                                    <label for="roast_date">วันที่รับเข้า :</label>
                                     <input type="date" id="roast_date" name="roast_date">
                                 </div>
                             </div>
@@ -105,12 +105,12 @@
                                 </div>
                             </div>
 
-                            <div class="field_t">
+                            <!-- <div class="field_t">
                                 <div class="form-row">
                                     <label for="price">ราคา :</label>
                                     <input type="number" id="price" name="price">
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="field_t">
                                 <div class="form-row">
