@@ -14,12 +14,12 @@
         <header class="topbar"></header>
 
         <form action="add_stock" method="post">
-            <h2 class="page-title-san">เพิ่มคลังสินค้า</h2>
+            <!-- <h2 class="page-title-san">เพิ่มคลังสินค้า</h2> -->
             <div class="container">
                 <div class="card">
                     <div class="card-header">
                         <div class="header-row">
-                            <h2 class="title">คลังเมล็ดกาแฟสาร</h2>
+                            <h2 class="title">เพิ่มคลังสินค้า / คลังเมล็ดกาแฟสาร</h2>
                             <!-- <label for="stock">เลือกรายการคลัง :</label>
                             <select class="select-stock">
                                 <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
@@ -52,10 +52,7 @@
                                     <textarea id="note" name="note"></textarea>
                                 </div>
                             </div> -->
-                        </div>
 
-
-                        <div class="row">
                             <div class="field">
                                 <div class="form-row">
                                     <label for="">กระบวนการ : </label>
@@ -68,7 +65,51 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="field">
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label>ปริมาณก่อนคัด (กิโลกรัม) :</label>
+                                    <input type="number" name="weight_before">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label>ปริมาณหลังคัด (กิโลกรัม) :</label>
+                                    <input type="number" name="weight_after">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="roast_date">วันที่รับเข้า :</label>
+                                    <input type="date" id="roast_date" name="roast_date">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="note">ผู้รับผิดชอบ :</label>
+                                    <input type="text" id="role" name="role">
+                                </div>
+                            </div>
+
+                        </div>
+                
+
+                        <!-- <div class="row">
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="">กระบวนการ : </label>
+                                    <select class="select-process" name="process" id="process">
+                                        <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
+                                        <option value="washed">Washed Process</option>
+                                        <option value="honey">Honey Process</option>
+                                        <option value="dry">Dry Process</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="field">
                                 <div class="form-row">
                                     <label for="">ระดับการคั่ว : </label>
                                     <select class="select-roast">
@@ -80,10 +121,10 @@
                                         <option value="dark">คั่วเข้ม</option>
                                     </select>
                                 </div>
-                            </div> -->
-                        </div>
+                            </div>
+                        </div> -->
 
-                        <div class="row three">
+                        <!-- <div class="row three">
                             <div class="field_t">
                                 <div class="form-row">
                                     <label for="roast_date">วันที่รับเข้า :</label>
@@ -93,24 +134,10 @@
 
                             <div class="field_t">
                                 <div class="form-row">
-                                    <label for="weight">ปริมาณ (กิโลกรัม) :</label>
-                                    <input type="number" id="weight" name="weight" step="0.01">
-                                </div>
-                            </div>
-
-                            <div class="field_t">
-                                <div class="form-row">
-                                    <label for="quantity">จำนวน :</label>
-                                    <input type="number" id="quantity" name="quantity">
-                                </div>
-                            </div>
-
-                            <!-- <div class="field_t">
-                                <div class="form-row">
                                     <label for="price">ราคา :</label>
                                     <input type="number" id="price" name="price">
                                 </div>
-                            </div> -->
+                            </div>
 
                             <div class="field_t">
                                 <div class="form-row">
@@ -118,7 +145,7 @@
                                     <input type="text" id="staff" name="staffname">
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="row">
                             <div class="field">

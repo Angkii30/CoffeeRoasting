@@ -14,12 +14,12 @@
         <header class="topbar"></header>
 
         <form action="add_stock" method="post">
-            <h2 class="page-title-r">เพิ่มคลังสินค้า</h2>
+            <!-- <h2 class="page-title-r">เพิ่มคลังสินค้า</h2> -->
             <div class="container">
                 <div class="card">
                     <div class="card-header">
                         <div class="header-row">
-                            <h2 class="title">คลังเมล็ดกาแฟคั่ว</h2>
+                            <h2 class="title">เพิ่มคลังสินค้า / คลังเมล็ดกาแฟคั่ว</h2>
                             <!-- <label for="stock">เลือกรายการคลัง :</label>
                             <select class="select-stock">
                                 <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
@@ -46,16 +46,6 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="field">
-                                <div class="form-row">
-                                    <label for="note">แหล่งที่มา :</label>
-                                    <textarea id="note" name="note"></textarea>
-                                </div>
-                            </div> -->
-                        </div>
-
-
-                        <div class="row">
                             <div class="field">
                                 <div class="form-row">
                                     <label for="">กระบวนการ : </label>
@@ -81,9 +71,109 @@
                                     </select>
                                 </div>
                             </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="quantity">เปอร์เซ็นการสูญเสีย :</label>
+                                    <input type="number" id="loss_percent" name="loss_percent">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label>ปริมาณก่อนคั่ว (กิโลกรัม) :</label>
+                                    <input type="number" name="weight_before">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label>ปริมาณหลังคั่ว (กิโลกรัม) :</label>
+                                    <input type="number" name="weight_after">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="roast_date">วันที่คั่ว :</label>
+                                    <input type="date" id="roast_date" name="roast_date">
+                                </div>
+                            </div>
+                            
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="price">วันหมดอายุ :</label>
+                                    <input type="date" id="exprie_date" name="exprie_date">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="price">ขนาดแพ็ค :</label>
+                                    <select name="pack_size" class="select-roast" id="pack_size">
+                                        <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
+                                        <option value="a">250 g.</option>
+                                        <option value="b">500 g.</option>
+                                        <option value="c">1,000 g.</option>
+                                        <option value="d">1,500 g.</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="price">จำนวนแพ็ค :</label>
+                                    <input type="number" id="pack_count" name="pack_count">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="note">ราคาแพ็ค :</label>
+                                    <input type="text" id="sell_price" name="sell_price">
+                                </div>
+                            </div>
+
+                            <div class="field_t">
+                                <div class="form-row">
+                                    <label for="note">ผู้รับผิดชอบ :</label>
+                                    <input type="text" id="role" name="role">
+                                </div>
+                            </div>
+
                         </div>
 
-                        <div class="row three">
+
+                        <!-- <div class="row">
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="">กระบวนการ : </label>
+                                    <select name="process_method" class="select-process" id="process">
+                                        <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
+                                        <option value="washed">Washed Process</option>
+                                        <option value="honey">Honey Process</option>
+                                        <option value="dry">Dry Process</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="form-row">
+                                    <label for="">ระดับการคั่ว : </label>
+                                    <select name="roast_level" class="select-roast" id="roast_level">
+                                        <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
+                                        <option value="light">คั่วอ่อน</option>
+                                        <option value="medium">คั่วกลาง</option>
+                                        <option value="mediumplus">คั่วกลาง +</option>
+                                        <option value="mediumdark">คั่วกลางเข้ม</option>
+                                        <option value="dark">คั่วเข้ม</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="row three">
                             <div class="field_t">
                                 <div class="form-row">
                                     <label for="roast_date">วันที่คั่ว :</label>
@@ -93,17 +183,7 @@
 
                             <div class="field_t">
                                 <div class="form-row">
-                                    <label>ปริมาณก่อนคั่ว (กิโลกรัม) :</label>
-                                    <input type="number" name="weight_before">
-
-                                    <label>ปริมาณหลังคั่ว (กิโลกรัม) :</label>
-                                    <input type="number" name="weight_after">
-                                </div>
-                            </div>
-
-                            <div class="field_t">
-                                <div class="form-row">
-                                    <label for="quantity">เปอร์เซ็นสูญเสีย :</label>
+                                    <label for="quantity">เปอร์เซ็นการสูญเสีย :</label>
                                     <input type="number" id="loss_percent" name="loss_percent">
                                 </div>
                             </div>
@@ -142,7 +222,7 @@
                                     <input type="text" id="role" name="role">
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="row">
                             <div class="field">
