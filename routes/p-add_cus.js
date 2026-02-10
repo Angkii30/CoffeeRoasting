@@ -6,6 +6,31 @@ const db = require("../db");
 //     res.render("add_customer", { query: req.query });
 // });
 
+router.get("/api/customer/:id", (req, res) => {
+
+    const id = req.params.id;
+
+    const sql = `
+        SELECT first_name,last_name,address,province,phone,email
+        FROM customer
+        WHERE customer_id = ?
+    `;
+
+    db.query(sql, [id], (err, result) => {
+
+        if (err) return res.status(500).json(err);
+
+        if (result.length === 0) {
+            return res.json({ found: false });
+        }
+
+        res.json({
+            found: true,
+            data: result[0]
+        });
+    });
+
+});
 
 router.post("/add_customer", (req, res) => {
 

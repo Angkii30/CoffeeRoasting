@@ -17,11 +17,11 @@
         <aside class="sidebar">
             <h2 class="logo">Coffee Roasting</h2>
             <ul class="menu">
-                <li onclick="window.location.href='../ejs/index'">หน้าแรก</li>
-                <li class="active" onclick="window.location.href='../ejs/stockall'">คลังสินค้า</li>
-                <li onclick="window.location.href='../ejs/customer'">รายชื่อลูกค้า</li>
-                <li onclick="window.location.href='../ejs/plan'">รายการสั่งซื้อ</li>
-                <li onclick="window.location.href='../ejs/user'">จัดการสิทธิ์</li>
+                <li onclick="window.location.href='/index'">หน้าแรก</li>
+                <li class="active" onclick="window.location.href='/stockall'">คลังสินค้า</li>
+                <li onclick="window.location.href='/customer'">รายชื่อลูกค้า</li>
+                <li onclick="window.location.href='/plan'">รายการสั่งซื้อ</li>
+                <li onclick="window.location.href='/user'">จัดการสิทธิ์</li>
             </ul>
         </aside>
 
@@ -31,7 +31,7 @@
 
             <section class="content">
                 <div class="toolbar">
-                    <button class="btn" onclick="window.location.href='../ejs/add_stock'">+ เพิ่มรายการ</button>
+                    <button class="btn" onclick="window.location.href='/add_stock'">+ เพิ่มรายการ</button>
 
                     <div class="toolbar-right">
                         <input type="text" placeholder="ค้นหารายการ">
@@ -59,7 +59,7 @@
                             <td>14/01/69</td>
                             <td></td>
                             <td class="action-col">
-                                <a href="../ejs/edit_stock">
+                                <a href="/edit_stock">
                                     <img src="Picture/edit.png" alt="แก้ไข" class="edit">
                                 </a>
                                 <img src="Picture/delete.png" alt="ลบ" class="delete" onclick="">
@@ -70,7 +70,7 @@
 
             </section>
         </main>
-    <script src="../JS/stock.js"></script>
+        <script src="../JS/stock.js"></script>
 </body>
 
 </html>

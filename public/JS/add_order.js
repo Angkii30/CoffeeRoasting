@@ -1,5 +1,4 @@
 //เหลือ โชว์order_id กับ customer_id (ยังไม่ได้เชื่อมกับฐานข้อมูล)
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const orderInput = document.getElementById("order_date");
@@ -367,3 +366,4 @@ document.addEventListener("DOMContentLoaded", function () {
     price.addEventListener("input", calculateTotal);
 
 });
+
