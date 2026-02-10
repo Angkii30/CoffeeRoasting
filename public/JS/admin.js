@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt");
+/*const bcrypt = require("bcrypt");
 const db = require("./db");
 
 async function createAdmin() {
@@ -10,7 +10,7 @@ async function createAdmin() {
         ["admin", hash, "admin"]
     );
 
-}
+}*/
 
 createAdmin();
 //ใช้ node admin.js

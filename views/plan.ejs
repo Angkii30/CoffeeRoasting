@@ -82,7 +82,9 @@
                         เพิ่มรายการสั่งซื้อ</button>
 
                     <div class="toolbar-right">
-                        <input type="text" placeholder="ค้นหา รหัสลูกค้า,ชื่อ,ระดับการคั่วและอื่นๆ">
+                        <input type="text" id="searchInput" placeholder="ค้นหา รหัสลูกค้า, ชื่อ, คั่ว, กระบวนการ,...">
+
+
 
                         <input type="date">
                     </div>
@@ -100,22 +102,8 @@
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>C001</td>
-                            <td>สุดสวย ชอบกาแฟ</td>
-                            <td>คั่วเข้ม</td>
-                            <td>Washed</td>
-                            <td></td>
-                            <td></td>
-                            <td class="action-col">
-                                <a href="/edit_order">
-                                    <img src="Picture/edit.png" alt="แก้ไข" class="edit">
-                                </a>
-                                <img src="Picture/delete.png" alt="ลบ" class="delete" onclick="">
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tbody id="orderTable"></tbody>
+
                 </table>
 
                 <!-- <div class="pagination">
@@ -129,6 +117,7 @@
             </section>
         </main>
     </div>
+    <script src="../JS/plan.js"></script>
 
 </body>
 

@@ -31,12 +31,16 @@
                         เพิ่มลูกค้า</button>
 
                     <div class="toolbar-right">
-                        <input type="text" placeholder="ค้นหา รหัสลูกค้า, ชื่อ, หรือจังหวัด">
 
-                        <input type="date">
+                        <!-- ช่องค้นหา -->
+                        <input type="text" id="searchInput" placeholder="ค้นหา รหัสลูกค้า, ชื่อ, หรือจังหวัด">
+
+                        <!-- วันที่ -->
+                        <input type="date" id="dateInput">
+
                     </div>
-                </div>
 
+                </div>
                 <table>
                     <thead>
                         <tr>
@@ -48,27 +52,18 @@
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>C001</td>
-                            <td>สุดสวย ชอบกาแฟ</td>
-                            <td>พะเยา</td>
-                            <td>3</td>
-                            <td>0123456789</td>
-                            <td class="action-col">
-                                <a href="/edit_customer">
-                                    <img src="/Picture/edit.png" alt="แก้ไข" class="edit">
-                                </a>
-                                <img src="/Picture/delete.png" alt="ลบ" class="delete" onclick="">
-                            </td>
-                        </tr>
+                    <tbody id="customerTable">
+                        <!-- JS ใส่ข้อมูลตรงนี้ -->
                     </tbody>
-
                 </table>
+
+
+
             </section>
         </main>
     </div>
+    <script src="../JS/customer.js"></script>
+
 </body>
 
 </html>
