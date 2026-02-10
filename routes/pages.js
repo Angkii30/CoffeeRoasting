@@ -197,9 +197,27 @@ router.get("/edit_stocksan", (req, res) => {
     res.render("edit_stocksan");
 });
 
-router.get("/edit_user", (req, res) => {
-    res.render("edit_user");
+router.get('/edit_user/:id', (req, res) => {
+    const id = req.params.id;
+
+    db.query(
+        'SELECT * FROM user WHERE user_id = ?',
+        [id],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+                return res.send('Database error');
+            }
+
+            res.render('edit_user', {
+                user: result[0]   // ⭐ ตรงนี้สำคัญ
+            });
+        }
+    );
 });
+
+
+
 
 router.get("/edit_order", (req, res) => {
     res.render("edit_order");
