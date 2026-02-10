@@ -141,7 +141,7 @@ function validateForm() {
     let valid = true;
 
     // ดึง element
-    // const customer = document.getElementById("customer_id");
+    const customer = document.getElementById("customer_id");
     // coust order = document.getElementById("order_id");
     const fname = document.getElementById("first_name");
     const lname = document.getElementById("last_name");
@@ -164,7 +164,7 @@ function validateForm() {
 
     // ล้าง error เก่า
     [
-        fname, lname, address, phone, email,
+        customer, fname, lname, address, phone, email,
         province, status, process, roast,
         pack, quantity, price,
         orderDate, deliveryDate
@@ -172,6 +172,11 @@ function validateForm() {
 
 
     /* ตรวจทีละช่อง */
+    if (customer.value.trim() === "") {
+        showError(customer, "กรุณากรอกรหัสลูกค้า");
+        valid = false;
+    }
+
     if (fname.value.trim() === "") {
         showError(fname, "กรุณากรอกชื่อ");
         valid = false;

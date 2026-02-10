@@ -1,18 +1,18 @@
 
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
 
-    const form = document.querySelector("form");
+//     const form = document.querySelector("form");
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
+//     form.addEventListener("submit", function (e) {
+//         e.preventDefault();
 
-        if (validateForm()) {
-            alert("✅ บันทึกข้อมูลเรียบร้อย");
-            form.submit();
-        }
-    });
+//         if (validateForm()) {
+//             alert("✅ บันทึกข้อมูลเรียบร้อย");
+//             form.submit();
+//         }
+//     });
 
-});
+// });
 
 function validateForm() {
 

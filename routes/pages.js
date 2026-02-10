@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const db = require("../db");
 const path = require("path");
+const bcrypt = require("bcrypt");
+
 
 /* หน้าแรก → login */
 router.get("/", (req, res) => {
@@ -20,10 +22,10 @@ router.post("/login", (req, res) => {
 
     const sql = `
         SELECT * FROM user
-        WHERE username = ? AND password = ?
+        WHERE username = ?
     `;
 
-    db.query(sql, [username, password], (err, result) => {
+    db.query(sql, [username], async (err, result) => {
 
         if (err) {
             console.log(err);
@@ -33,23 +35,58 @@ router.post("/login", (req, res) => {
             });
         }
 
-        if (result.length > 0) {
-
-            res.json({
-                success: true
-            });
-
-        } else {
-
-            res.json({
+        // ไม่เจอ user
+        if (result.length === 0) {
+            return res.json({
                 success: false,
                 message: "Username หรือ Password ไม่ถูกต้อง"
             });
+        }
+
+        const user = result[0];
+        const dbPassword = user.password;
+
+        let isMatch = false;
+
+        // ✅ กรณี password ถูก hash แล้ว
+        if (dbPassword.startsWith("$2")) {
+
+            isMatch = await bcrypt.compare(password, dbPassword);
 
         }
+        // ✅ กรณี password ยังไม่ hash
+        else {
+
+            isMatch = (password === dbPassword);
+
+            // ⭐ อัปเกรดเป็น hash อัตโนมัติ
+            if (isMatch) {
+
+                const newHash = await bcrypt.hash(password, 10);
+
+                db.query(
+                    "UPDATE user SET password=? WHERE user_id=?",
+                    [newHash, user.user_id]
+                );
+            }
+        }
+
+        // ❌ รหัสผิด
+        if (!isMatch) {
+            return res.json({
+                success: false,
+                message: "Username หรือ Password ไม่ถูกต้อง"
+            });
+        }
+
+        // ✅ ผ่าน
+        res.json({
+            success: true
+        });
 
     });
 });
+
 function auth(req, res, next) {
 
     if (!req.session || !req.session.user) {
