@@ -59,7 +59,7 @@
                             <div class="field">
                                 <div class="form-row">
                                     <label for="">กระบวนการ : </label>
-                                    <select name="process_method" class="select-process">
+                                    <select name="process_method" class="select-process" id="process">
                                         <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
                                         <option value="washed">Washed Process</option>
                                         <option value="honey">Honey Process</option>
@@ -71,7 +71,7 @@
                             <div class="field">
                                 <div class="form-row">
                                     <label for="">ระดับการคั่ว : </label>
-                                    <select name="roast_level" class="select-roast">
+                                    <select name="roast_level" class="select-roast" id="roast_level">
                                         <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
                                         <option value="light">คั่วอ่อน</option>
                                         <option value="medium">คั่วกลาง</option>
@@ -157,20 +157,20 @@
 
                     <div class="actions">
                         <button type="reset" class="btn cancle" onclick="history.back()">ยกเลิก</button>
-                        <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
+                        <button type="submit" class="btn save">บันทึก</button>
                     </div>
 
                 </div>
             </div>
 
-            <script>
+            <!-- <script>
                 function savedata() {
                     alert("บันทึกข้อมูลเรียบร้อย");
                     history.back();
                 }
-            </script>
+            </script> -->
     </main>
-
+    <script src="../JS/add_stocksan.js"></script>
 </body>
 
 </html>

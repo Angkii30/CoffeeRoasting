@@ -221,17 +221,22 @@ h1 {
 
 .radio-group {
     display: flex;
-    flex-direction: column;   /* เรียงบน-ล่าง */
-    gap: 4px;                 /* ระยะห่างระหว่างแต่ละตัว (ปรับได้) */
+    flex-direction: column;
+    /* เรียงบน-ล่าง */
+    gap: 4px;
+    /* ระยะห่างระหว่างแต่ละตัว (ปรับได้) */
 }
 
 
 .radio-label {
     display: flex;
     align-items: center;
-    gap: 6px;          /* ระยะระหว่างปุ่มกับข้อความ */
-    margin: 0;         /* ตัด margin ที่ทำให้ห่าง */
-    line-height: 1.2;  /* ลดความสูงบรรทัด */
+    gap: 6px;
+    /* ระยะระหว่างปุ่มกับข้อความ */
+    margin: 0;
+    /* ตัด margin ที่ทำให้ห่าง */
+    line-height: 1.2;
+    /* ลดความสูงบรรทัด */
 }
 
 input[type="radio"] {
