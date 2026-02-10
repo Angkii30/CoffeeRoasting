@@ -8,12 +8,13 @@
     <link rel="icon" href="Picture/logo.png">
     <link rel="stylesheet" href="../CSS/edit.css">
 </head>
-<script src="../JS/add_order.js"></script>
 
 <body>
     <main class="main">
         <header class="topbar"></header>
         <form action="/add_order" method="POST" novalidate>
+            <input type="hidden" id="roast_id" name="roast_id">
+
             <h2 class="page-title">เพิ่มข้อมูล</h2>
             <div class="container">
                 <div class="card">
@@ -184,7 +185,7 @@
             </div>
 
     </main>
-
+    <script src="../JS/add_order.js"></script>
 </body>
 
 </html>
