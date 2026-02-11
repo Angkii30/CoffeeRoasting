@@ -154,18 +154,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!validateForm()) return;
 
+
+        /* หา roast_id ก่อน */
         const roastId = await findRoastId();
 
         if (!roastId) {
-            alert("❌ ไม่พบข้อมูลการคั่ว");
+            alert("ไม่พบข้อมูลการคั่ว");
             return;
         }
 
         document.getElementById("roast_id").value = roastId;
 
-        alert("✅ บันทึกข้อมูลเรียบร้อย");
 
-        form.submit();
+        /* ส่งข้อมูลไป Backend */
+        const formData = new FormData(form);
+
+        try {
+
+            const res = await fetch("/add_order", {
+                method: "POST",
+                body: formData
+            });
+
+            if (res.redirected) {
+                window.location.href = res.url;
+            }
+
+        } catch (err) {
+
+            console.error(err);
+            alert("บันทึกไม่สำเร็จ");
+        }
 
     });
 
@@ -337,6 +356,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const process = document.querySelector(".select-process");
         const roast = document.querySelector(".select-lavel");
 
+        console.log("PROCESS =", process.value);
+        console.log("ROAST =", roast.value);
+
         if (!process.value || !roast.value) return null;
 
         const res = await fetch(
@@ -345,7 +367,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const data = await res.json();
 
+        console.log("ROAST DATA =", data);
+
         return data.roast_id || null;
     }
+
 
 });
