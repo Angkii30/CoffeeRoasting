@@ -2,37 +2,31 @@ const express = require("express");
 const router = express.Router();
 const db = require("../db");
 
-
-// ================= GET =================
 router.get("/api/stockroast", (req, res) => {
 
     const search = req.query.search || "";
+    const roastDate = req.query.roastDate || "";
 
     let sql = `
         SELECT 
-            r.roast_id,
-            r.process_method,
-            r.roast_level,
-            r.roast_date,
-            r.expire_date,
-            r.weight_before,
-            r.weight_after,
-            r.loss_percent,
-            r.pack_size,
-            r.pack_count,
-            r.sell_price,
-            r.note,
+            sr.roast_id,
+            sr.process_method,
+            sr.roast_level,
+            sr.roast_date,
+            sr.expire_date,
+            sr.pack_size,
+            sr.pack_count,
 
-            u.username,
-            s.species
+            ss.species,
+            u.username
 
-        FROM stock_roast r
+        FROM stock_roast sr
+
+        LEFT JOIN stock_san ss
+            ON sr.san_id = ss.san_id
 
         LEFT JOIN user u
-            ON r.user_id = u.user_id
-
-        LEFT JOIN stock_san s
-            ON r.san_id = s.san_id
+            ON sr.user_id = u.user_id
 
         WHERE 1=1
     `;
@@ -40,25 +34,35 @@ router.get("/api/stockroast", (req, res) => {
     let params = [];
 
 
-    // Search
+    // 🔍 ค้นหาข้อความ
     if (search) {
 
         sql += `
             AND (
-                s.species LIKE ?
-                OR r.process_method LIKE ?
-                OR r.roast_level LIKE ?
+                ss.species LIKE ?
+                OR sr.process_method LIKE ?
+                OR sr.roast_level LIKE ?
                 OR u.username LIKE ?
             )
         `;
 
         const key = `%${search}%`;
-
         params.push(key, key, key, key);
     }
 
 
-    sql += " ORDER BY r.roast_id DESC";
+    // 📅 ค้นหาวันที่คั่ว (สำคัญมาก)
+    if (roastDate) {
+
+        sql += `
+            AND DATE(sr.roast_date) = ?
+        `;
+
+        params.push(roastDate);
+    }
+
+
+    sql += " ORDER BY sr.roast_id DESC";
 
 
     db.query(sql, params, (err, result) => {
@@ -72,32 +76,4 @@ router.get("/api/stockroast", (req, res) => {
     });
 
 });
-
-
-
-// ================= DELETE =================
-router.delete("/api/stockroast/:id", (req, res) => {
-
-    const id = req.params.id;
-
-    db.query(
-        "DELETE FROM stock_roast WHERE roast_id = ?",
-        [id],
-        (err, result) => {
-
-            if (err) {
-                console.log(err);
-                return res.status(500).json(err);
-            }
-
-            if (result.affectedRows === 0) {
-                return res.json({ success: false });
-            }
-
-            res.json({ success: true });
-        }
-    );
-});
-
-
 module.exports = router;

@@ -1,36 +1,77 @@
-function showErrorSelect(select) {
-    select.classList.add("select-error");
-
-    select.addEventListener("change", function clear() {
-        select.classList.remove("select-error");
-        select.removeEventListener("change", clear);
-    });
-}
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =====================
        GET ELEMENTS
     ====================== */
+    const form = document.querySelector("form");
 
-    // const form = document.querySelector("form");
+    const orderDate = document.getElementById("order_date");
+    const deliveryDate = document.getElementById("delivery_date");
 
-    // const orderDate = document.getElementById("order_date");
-    // const deliveryDate = document.getElementById("delivery_date");
+    const quantity = document.getElementById("quantity");
+    const price = document.getElementById("price");
+    const total = document.getElementById("total_price");
 
-    // const quantity = document.getElementById("quantity");
-    // const price = document.getElementById("price");
-    // const total = document.getElementById("total_price");
+    const customerInput = document.getElementById("customer_id");
 
-    // const customer = document.getElementById("customer_id");
-    // const status = document.getElementById("order_status");
+    const provinceSelect = document.getElementById("province");
 
-    // const process = document.querySelector(".select-process");
-    // const roast = document.querySelector(".select-lavel");
-    // const pack = document.querySelector(".select-size");
 
-    // const provinceSelect = document.getElementById("province");
+    /* =====================
+       LOAD CUSTOMER DATA
+    ====================== */
+
+    customerInput.addEventListener("blur", loadCustomerData);
+
+    async function loadCustomerData() {
+
+        const customerId = customerInput.value.trim();
+
+        if (customerId === "") return;
+
+        try {
+
+            const res = await fetch(`/api/customer/${customerId}`);
+            const data = await res.json();
+
+            if (data.found) {
+
+                document.getElementById("first_name").value = data.data.first_name;
+                document.getElementById("last_name").value = data.data.last_name;
+                document.getElementById("address").value = data.data.address;
+                document.getElementById("province").value = data.data.province;
+                document.getElementById("phone").value = data.data.phone;
+                document.getElementById("email").value = data.data.email;
+
+                clearError(customerInput);
+
+            } else {
+
+                clearCustomerForm();
+                showError(customerInput, "ไม่พบรหัสลูกค้า");
+
+            }
+
+        } catch (err) {
+
+            console.error(err);
+            alert("โหลดข้อมูลลูกค้าไม่สำเร็จ");
+
+        }
+    }
+
+
+    function clearCustomerForm() {
+
+        [
+            "first_name",
+            "last_name",
+            "address",
+            "province",
+            "phone",
+            "email"
+        ].forEach(id => document.getElementById(id).value = "");
+    }
 
 
     /* =====================
@@ -41,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     orderDate.value = today;
     orderDate.min = today;
+
     deliveryDate.min = today;
 
     orderDate.addEventListener("change", function () {
@@ -150,14 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const roast = document.querySelector(".select-lavel");
         const pack = document.querySelector(".select-size");
 
-        const orderDate = document.getElementById("order_date");
-        const deliveryDate = document.getElementById("delivery_date");
 
-        const quantity = document.getElementById("quantity");
-        const price = document.getElementById("price");
-
-
-        // clear
         [
             customer, fname, lname, address,
             phone, email, quantity, price,
@@ -169,7 +204,6 @@ document.addEventListener("DOMContentLoaded", function () {
         ].forEach(el => el.classList.remove("select-error"));
 
 
-        // TEXT
         if (customer.value.trim() === "") {
             showError(customer, "กรอกรหัสลูกค้า");
             valid = false;
@@ -201,7 +235,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        // SELECT
         if (status.value === "") {
             showErrorSelect(status);
             valid = false;
@@ -228,7 +261,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        // DATE
         if (orderDate.value === "") {
             showError(orderDate, "เลือกวันที่");
             valid = false;
@@ -240,7 +272,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        // NUMBER
         if (quantity.value <= 0) {
             showError(quantity, "มากกว่า 0");
             valid = false;
@@ -253,7 +284,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return valid;
     }
-
 
 
     /* =====================
@@ -303,6 +333,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ====================== */
 
     async function findRoastId() {
+
+        const process = document.querySelector(".select-process");
+        const roast = document.querySelector(".select-lavel");
 
         if (!process.value || !roast.value) return null;
 

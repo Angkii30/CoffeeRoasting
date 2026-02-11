@@ -52,7 +52,7 @@ router.get("/api/stockkala", (req, res) => {
     // 📅 Date
     if (date) {
 
-        sql += `
+        sql += ` 
         AND DATE(k.receive_date) = ?
         `;
 
