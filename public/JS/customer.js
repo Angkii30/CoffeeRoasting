@@ -54,14 +54,15 @@ function loadCustomers() {
                     <td>${cus.phone}</td>
 
                     <td class="action-col">
-                        <a href="/edit_customer/${cus.customer_id}">
+                        <a href="/edit_customer?id=${cus.customer_id}">
                             <img src="/Picture/edit.png" class="edit">
                         </a>
 
                         <img src="/Picture/delete.png"
-                             class="delete"
-                             onclick="deleteCustomer(${cus.customer_id})">
+                            class="delete"
+                            onclick="deleteCustomer(${cus.customer_id})">
                     </td>
+
                 `;
 
                 table.appendChild(row);
