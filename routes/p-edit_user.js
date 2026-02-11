@@ -3,8 +3,8 @@ const router = express.Router();
 const db = require("../db");
 
 /* GET หน้าแก้ไข */
-router.get("/:id", (req, res) => {
-    const userId = req.params.id;
+router.get("/", (req, res) => {
+    const userId = req.query.id;
 
     const sql = "SELECT * FROM user WHERE user_id = ?";
     db.query(sql, [userId], (err, result) => {
@@ -15,6 +15,7 @@ router.get("/:id", (req, res) => {
         });
     });
 });
+
 
 /* POST บันทึกการแก้ไข */
 router.post("/update", (req, res) => {

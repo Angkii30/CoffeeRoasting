@@ -1,97 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Roasting</title>
-    <link rel="icon" href="/Coffee/ejs/Picture/logo.png">
-    <link rel="stylesheet" href="/Coffee/ejs/CSS/edit.css">
+    <title>แก้ไขข้อมูลลูกค้า</title>
+    <link rel="stylesheet" href="/CSS/edit.css">
 </head>
-
 <body>
-    <main class="main">
-        <header class="topbar"></header>
 
-        <form action="add_orderuser" method="post">
-            <h2 class="page-title-cus">แก้ไขข้อมูลลูกค้า</h2>
-            <div class="container">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="header-row">
-                            <label for="customer_id">รหัสลูกค้า :</label>
-                            <input type="text" id="customer_id" name="customer_id">
-                        </div>
+<main class="main">
+
+    <form action="/update_customer" method="POST">
+
+        <input type="hidden" 
+               name="customer_id"
+               value="<%= customer.customer_id %>">
+
+        <div class="container">
+            <div class="card">
+
+                <!-- Header -->
+                <div class="card-header">
+                    <div class="card-header-user">
+                        แก้ไขข้อมูลลูกค้า
                     </div>
-
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="field">
-                                <div class="form-row">
-                                    <label for="firstname">ชื่อ :</label>
-                                    <input type="text" id="firstname" name="firstname">
-                                </div>
-
-                                <div class="form-row">
-                                    <label for="lastname">นามสกุล :</label>
-                                    <input type="text" id="lastname" name="lastname">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="field">
-                                <div class="form-row">
-                                    <label for="note">ที่อยู่ :</label>
-                                    <textarea id="note" name="note"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="field">
-                                <div class="form-row">
-                                    <label for="province">จังหวัด :</label>
-                                    <select id="province" name="province" required>
-                                        <option value="" disabled selected hidden>-- เลือกจังหวัด --</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- <div class="phone"> -->
-                            <div class="field">
-                                <div class="form-row">
-                                    <label for="phone">เบอร์โทร :</label>
-                                    <input type="text" id="phone" name="phone">
-                                </div>
-                            </div>
-                            <!-- </div> -->
-
-                            <!-- <div class="email"> -->
-                            <div class="field">
-                                <div class="form-row">
-                                    <label for="email">อีเมล :</label>
-                                    <input type="email" id="email" name="email">
-                                </div>
-                            </div>
-                            <!-- </div> -->
-                        </div>
-
-                    </div>
-
-                    <div class="actions">
-                        <button type="reset" class="btn cancle" onclick="history.back()">ยกเลิก</button>
-                        <button type="submit" class="btn save" onclick="savedata()">บันทึก</button>
-                    </div>
-
                 </div>
-            </div>
 
-            <script>
-                function savedata() {
-                    alert("บันทึกข้อมูลเรียบร้อย");
-                    history.back();
-                }
-            </script>
-    </main>
+                <!-- Body -->
+                <div class="card-body">
+                    <div class="row">
+
+                        <!-- ฝั่งซ้าย -->
+                        <div class="field">
+
+                            <div class="form-row">
+                                <label>ชื่อ :</label>
+                                <input type="text"
+                                       name="firstname"
+                                       value="<%= customer.first_name %>">
+                            </div>
+
+                            <div class="form-row">
+                                <label>ที่อยู่ :</label>
+                                <textarea name="address" rows="4"><%= customer.address %></textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <label>เบอร์โทร :</label>
+                                <input type="text"
+                                       name="phone"
+                                       value="<%= customer.phone %>">
+                            </div>
+
+                        </div>
+
+                        <!-- ฝั่งขวา -->
+                        <div class="field">
+
+                            <div class="form-row">
+                                <label>นามสกุล :</label>
+                                <input type="text"
+                                       name="lastname"
+                                       value="<%= customer.last_name %>">
+                            </div>
+
+                            <div class="form-row">
+                                <label>จังหวัด :</label>
+
+                                <select name="province" required>
+                                    <option value="">-- เลือกจังหวัด --</option>
+
+                                    <%
+                                        const provinces = [
+                                            "กรุงเทพมหานคร","กระบี่","กาญจนบุรี","กาฬสินธุ์","กำแพงเพชร","ขอนแก่น","จันทบุรี","ฉะเชิงเทรา",
+                                            "ชลบุรี","ชัยนาท","ชัยภูมิ","ชุมพร","เชียงราย","เชียงใหม่","ตรัง","ตราด","ตาก","นครนายก",
+                                            "นครปฐม","นครพนม","นครราชสีมา","นครศรีธรรมราช","นครสวรรค์","นนทบุรี","นราธิวาส","น่าน",
+                                            "บึงกาฬ","บุรีรัมย์","ปทุมธานี","ประจวบคีรีขันธ์","ปราจีนบุรี","ปัตตานี","พระนครศรีอยุธยา",
+                                            "พะเยา","พังงา","พัทลุง","พิจิตร","พิษณุโลก","เพชรบุรี","เพชรบูรณ์","แพร่","ภูเก็ต","มหาสารคาม",
+                                            "มุกดาหาร","แม่ฮ่องสอน","ยโสธร","ยะลา","ร้อยเอ็ด","ระนอง","ระยอง","ราชบุรี","ลพบุรี","ลำปาง",
+                                            "ลำพูน","เลย","ศรีสะเกษ","สกลนคร","สงขลา","สตูล","สมุทรปราการ","สมุทรสงคราม","สมุทรสาคร",
+                                            "สระแก้ว","สระบุรี","สิงห์บุรี","สุโขทัย","สุพรรณบุรี","สุราษฎร์ธานี","สุรินทร์","หนองคาย",
+                                            "หนองบัวลำภู","อ่างทอง","อำนาจเจริญ","อุดรธานี","อุตรดิตถ์","อุทัยธานี","อุบลราชธานี"
+                                        ];
+
+                                        provinces.forEach(function(p) {
+                                    %>
+
+                                        <option value="<%= p %>"
+                                            <%= customer.province === p ? "selected" : "" %>>
+                                            <%= p %>
+                                        </option>
+
+                                    <% }); %>
+
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <label>อีเมล :</label>
+                                <input type="email"
+                                       name="email"
+                                       value="<%= customer.email %>">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="actions">
+                    <button type="button" 
+                            class="btn cancel"
+                            onclick="window.location.href='/customer'">
+                        ยกเลิก
+                    </button>
+
+                    <button type="submit" 
+                            class="btn save">
+                        บันทึกการแก้ไข
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+
+</main>
 
 </body>
-
 </html>

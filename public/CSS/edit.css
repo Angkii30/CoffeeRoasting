@@ -358,3 +358,26 @@ textarea {
     font-size: 12px;
     margin-top: 3px;
 } */
+
+
+/* ===== FIX เฉพาะหน้า edit_customer ===== */
+
+.row {
+    align-items: start;
+}
+
+.field {
+    flex-direction: column;   /* 👈 ให้ label อยู่บน input */
+    align-items: stretch;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;              /* 👈 เต็มช่อง grid */
+}
+
+textarea {
+    white-space: normal;
+    word-break: normal;
+}

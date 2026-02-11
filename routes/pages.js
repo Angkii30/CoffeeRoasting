@@ -178,8 +178,21 @@ router.get("/add_user", (req, res) => {
 });
 
 router.get("/edit_customer", (req, res) => {
-    res.render("edit_customer");
+    const id = req.query.id;
+
+    db.query("SELECT * FROM customer WHERE customer_id = ?", [id], (err, result) => {
+        if (err) throw err;
+
+        console.log(result[0]); // 👈 ใส่ตรงนี้
+
+        res.render("edit_customer", {
+            customer: result[0]
+        });
+    });
 });
+
+
+
 
 router.get("/edit_stock", (req, res) => {
     res.render("edit_stock");
