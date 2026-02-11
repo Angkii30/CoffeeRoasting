@@ -62,6 +62,17 @@
     </main>
     <script src="/JS/user.js"></script>
 
+  </div>
+  
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get("success") === "1") {
+        alert("✅ บันทึกการแก้ไขเรียบร้อยแล้ว");
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+</script>
+
 </body>
 
 </html>
