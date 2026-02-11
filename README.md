@@ -20,6 +20,7 @@ git clone https://github.com/Angkii30/CoffeeRoasting.git
 cd CoffeeRoasting
 
 2️⃣ ติดตั้ง Library ที่จำเป็นผ่าน npm
+
 npm install
 
 3️⃣ Import ฐานข้อมูล
@@ -32,3 +33,9 @@ Import ไฟล์ เข้าไปในฐานข้อมูล
 
 4️⃣ รันโปรเจกต์
 npm start หรือ node server.js
+
+
+#ขั้นตอนการใช้งาน
+เข้าสู่ระบบโดย
+
+Username -- admin Password --1234 
