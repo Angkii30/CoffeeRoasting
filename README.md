@@ -35,7 +35,16 @@ Import ไฟล์ เข้าไปในฐานข้อมูล
 npm start หรือ node server.js
 
 
-#ขั้นตอนการใช้งาน
-เข้าสู่ระบบโดย
 
+#ขั้นตอนการใช้งาน
+
+เข้าสู่ระบบโดย
 Username -- admin Password --1234 
+
+
+
+Database Schema 
+
+https://teams.microsoft.com/l/message/19:1459c9568a404985abd1c9e49f15bf67@thread.v2/1770825671852?context=%7B%22contextType%22%3A%22chat%22%7D
+
+![alt text](image.png)
