@@ -13,7 +13,7 @@
     <main class="main">
         <header class="topbar"></header>
 
-        <form action="add_stock" method="post">
+        <form action="/add_stockroast" method="post" novalidate>
             <!-- <h2 class="page-title-r">เพิ่มคลังสินค้า</h2> -->
             <div class="container">
                 <div class="card">
@@ -103,8 +103,8 @@
 
                             <div class="field_t">
                                 <div class="form-row">
-                                    <label for="price">วันหมดอายุ :</label>
-                                    <input type="date" id="exprie_date" name="exprie_date">
+                                    <label for="expire_date">วันหมดอายุ :</label>
+                                    <input type="date" id="expire_date" name="expire_date">
                                 </div>
                             </div>
 
@@ -137,8 +137,8 @@
 
                             <div class="field_t">
                                 <div class="form-row">
-                                    <label for="note">ผู้รับผิดชอบ :</label>
-                                    <input type="text" id="role" name="role">
+                                    <label for="user_id">ผู้รับผิดชอบ :</label>
+                                    <input type="text" id="user_id" name="user_id">
                                 </div>
                             </div>
 

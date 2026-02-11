@@ -9,13 +9,13 @@ router.post('/add_stock', (req, res) => {
     receive_date,
     weight,
     buy_price,
-    user_id,
+    role,
     note
   } = req.body;
 
   const sql = `
     INSERT INTO stock_cherry
-    (species, source_farm, receive_date, weight, buy_price, user_id, note, created_at)
+    (species, source_farm, receive_date, weight, buy_price, role, note, created_at)
     VALUES (?, ?, ?, ?, ?, ?, ?, NOW())
   `;
 
@@ -25,7 +25,7 @@ router.post('/add_stock', (req, res) => {
     receive_date,
     weight,
     buy_price,
-    user_id,
+    role,
     note
   ], (err, result) => {
 

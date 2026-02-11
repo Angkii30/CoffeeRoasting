@@ -13,7 +13,7 @@
     <main class="main">
         <header class="topbar"></header>
 
-        <form action="add_stock" method="post">
+        <form action="/add_stocksan" method="post" novalidate>
             <!-- <h2 class="page-title-san">เพิ่มคลังสินค้า</h2> -->
             <div class="container">
                 <div class="card">
@@ -56,7 +56,7 @@
                             <div class="field">
                                 <div class="form-row">
                                     <label for="">กระบวนการ : </label>
-                                    <select class="select-process" name="process" id="process">
+                                    <select class="select-process" name="process_method" id="process_method">
                                         <option value="" disabled selected hidden>คลิกเพื่อเลือก</option>
                                         <option value="washed">Washed Process</option>
                                         <option value="honey">Honey Process</option>
@@ -81,15 +81,15 @@
 
                             <div class="field_t">
                                 <div class="form-row">
-                                    <label for="roast_date">วันที่รับเข้า :</label>
-                                    <input type="date" id="roast_date" name="roast_date">
+                                    <label for="receive_date">วันที่รับเข้า :</label>
+                                    <input type="date" id="receive_date" name="receive_date">
                                 </div>
                             </div>
 
                             <div class="field_t">
                                 <div class="form-row">
-                                    <label for="note">ผู้รับผิดชอบ :</label>
-                                    <input type="text" id="role" name="role">
+                                    <label for="user_id">ผู้รับผิดชอบ :</label>
+                                    <input type="text" id="user_id" name="user_id">
                                 </div>
                             </div>
 
@@ -172,6 +172,8 @@
                     history.back();
                 }
             </script> -->
+
+        </form>
     </main>
     <script src="../JS/add_stocksan.js"></script>
 </body>

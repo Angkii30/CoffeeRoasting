@@ -1,131 +1,117 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const form = document.querySelector("form");
+  const form = document.querySelector("form");
 
-    const beforeInput = document.querySelector('input[name="weight_before"]');
-    const afterInput = document.querySelector('input[name="weight_after"]');
-    const lossInput = document.getElementById("loss_percent");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-    /* ================== คำนวณ % สูญเสีย ================== */
-    function calLoss() {
-
-        const before = parseFloat(beforeInput.value);
-        const after = parseFloat(afterInput.value);
-
-        if (before > 0 && after >= 0 && after <= before) {
-
-            const loss = ((before - after) / before) * 100;
-            lossInput.value = loss.toFixed(2);
-
-        } else {
-            lossInput.value = "";
-        }
+    if (validateForm()) {
+      form.submit();
     }
-
-    beforeInput.addEventListener("input", calLoss);
-    afterInput.addEventListener("input", calLoss);
-
-
-    /* ================== Validate ================== */
-    form.addEventListener("submit", function (e) {
-
-        e.preventDefault();
-
-        let valid = true;
-
-        /* ล้าง error เก่า */
-        document.querySelectorAll(".input-error, .select-error")
-            .forEach(el => {
-                el.classList.remove("input-error", "select-error");
-            });
-
-        /* ===== สายพันธุ์ ===== */
-        const species = document.querySelector('input[name="species"]:checked');
-        if (!species) {
-            alert("กรุณาเลือกสายพันธุ์กาแฟ");
-            valid = false;
-        }
-
-        /* ===== Process ===== */
-        const process = document.getElementById("process");
-        if (!process.value) {
-            process.classList.add("select-error");
-            valid = false;
-        }
-
-        /* ===== Roast Level ===== */
-        const roast = document.getElementById("roast_level");
-        if (!roast.value) {
-            roast.classList.add("select-error");
-            valid = false;
-        }
-
-        /* ===== วันที่คั่ว ===== */
-        const roastDate = document.getElementById("roast_date");
-        if (!roastDate.value) {
-            roastDate.classList.add("input-error");
-            valid = false;
-        }
-
-        /* ===== น้ำหนัก ===== */
-        if (!beforeInput.value || beforeInput.value <= 0) {
-            beforeInput.classList.add("input-error");
-            valid = false;
-        }
-
-        if (!afterInput.value || afterInput.value <= 0) {
-            afterInput.classList.add("input-error");
-            valid = false;
-        }
-
-        if (Number(afterInput.value) > Number(beforeInput.value)) {
-            alert("น้ำหนักหลังคั่วต้องไม่มากกว่าก่อนคั่ว");
-            valid = false;
-        }
-
-        /* ===== วันหมดอายุ ===== */
-        const exp = document.getElementById("exprie_date");
-        if (!exp.value) {
-            exp.classList.add("input-error");
-            valid = false;
-        }
-
-        /* ===== แพ็ค ===== */
-        const packSize = document.getElementById("pack_size");
-        const packCount = document.getElementById("pack_count");
-
-        if (!packSize.value.trim()) {
-            packSize.classList.add("input-error");
-            valid = false;
-        }
-
-        if (!packCount.value || packCount.value <= 0) {
-            packCount.classList.add("input-error");
-            valid = false;
-        }
-
-        /* ===== ราคา ===== */
-        const price = document.getElementById("sell_price");
-        if (!price.value || price.value <= 0) {
-            price.classList.add("input-error");
-            valid = false;
-        }
-
-        /* ===== ผู้รับผิดชอบ ===== */
-        const role = document.getElementById("role");
-        if (!role.value.trim()) {
-            role.classList.add("input-error");
-            valid = false;
-        }
-
-        /* ===== ผ่าน ===== */
-        if (valid) {
-            alert("✅ บันทึกข้อมูลเรียบร้อย");
-            form.submit();
-        } else {
-            alert("⚠️ กรุณากรอกข้อมูลให้ครบถ้วน");
-        }
-
-    });
+  });
 
 });
+
+function validateForm() {
+
+  let valid = true;
+
+  /* ===== ดึง element ===== */
+  const species = document.querySelector('input[name="species"]:checked');
+  const radioGroup = document.querySelector(".radio-group");
+
+  const process = document.querySelector('select[name="process_method"]');
+  const roastDate = document.querySelector('input[name="roast_date"]');
+  const roastLevel = document.querySelector('select[name="roast_level"]');
+
+  const weightBefore = document.querySelector('input[name="weight_before"]');
+  const weightAfter = document.querySelector('input[name="weight_after"]');
+
+  const packSize = document.querySelector('select[name="pack_size"]');
+  const packCount = document.querySelector('input[name="pack_count"]');
+  const sellPrice = document.querySelector('input[name="sell_price"]');
+
+  const userId = document.querySelector('input[name="user_id"]');
+
+  /* ===== ล้าง error ===== */
+  [process, roastDate, roastLevel, weightBefore, weightAfter,
+   packSize, packCount, sellPrice, userId]
+    .forEach(clearError);
+
+  radioGroup.classList.remove("input-error");
+
+  /* ===== ตรวจสอบ ===== */
+
+  if (!species) {
+    radioGroup.classList.add("input-error");
+    valid = false;
+  }
+
+  if (!process.value) {
+    showError(process, "เลือกกระบวนการ");
+    valid = false;
+  }
+
+  if (!roastLevel.value) {
+    showError(roastLevel, "เลือกระดับการคั่ว");
+    valid = false;
+  }
+
+  if (!roastDate.value) {
+    showError(roastDate, "เลือกวันที่คั่ว");
+    valid = false;
+  }
+
+  if (!weightBefore.value || weightBefore.value <= 0) {
+    showError(weightBefore, "กรอกน้ำหนักก่อนคั่ว");
+    valid = false;
+  }
+
+  if (!weightAfter.value || weightAfter.value <= 0) {
+    showError(weightAfter, "กรอกน้ำหนักหลังคั่ว");
+    valid = false;
+  }
+
+  if (!packSize.value) {
+    showError(packSize, "เลือกขนาดแพ็ค");
+    valid = false;
+  }
+
+  if (!packCount.value || packCount.value <= 0) {
+    showError(packCount, "กรอกจำนวนแพ็ค");
+    valid = false;
+  }
+
+  if (!sellPrice.value || sellPrice.value <= 0) {
+    showError(sellPrice, "กรอกราคาขาย");
+    valid = false;
+  }
+
+  if (!userId.value.trim()) {
+    showError(userId, "กรอกชื่อผู้รับผิดชอบ");
+    valid = false;
+  }
+
+  return valid;
+}
+
+/* ===== error style ===== */
+
+function showError(input, message) {
+  if (!input) return;
+
+  input.classList.add("input-error");
+  input.value = "";
+  input.placeholder = message;
+
+  input.addEventListener("input", function clear() {
+    input.classList.remove("input-error");
+    input.placeholder = "";
+    input.removeEventListener("input", clear);
+  });
+}
+
+function clearError(el) {
+  if (!el) return;
+  el.classList.remove("input-error");
+}

@@ -1,71 +1,91 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    const form = document.querySelector("form");
+  const form = document.querySelector("form");
 
-    form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-        e.preventDefault(); // กัน submit ทันที
-
-        let valid = true;
-
-        // ล้าง error เก่า
-        document.querySelectorAll(".input-error, .select-error")
-            .forEach(el => {
-                el.classList.remove("input-error", "select-error");
-            });
-
-        /* ===== สายพันธุ์ ===== */
-        const species = document.querySelector('input[name="species"]:checked');
-        if (!species) {
-            alert("กรุณาเลือกสายพันธุ์กาแฟ");
-            valid = false;
-        }
-
-        /* ===== กระบวนการ ===== */
-        const process = document.getElementById("process");
-        if (!process.value) {
-            process.classList.add("select-error");
-            valid = false;
-        }
-
-        /* ===== วันที่รับเข้า ===== */
-        const date = document.getElementById("roast_date");
-        if (!date.value) {
-            date.classList.add("input-error");
-            valid = false;
-        }
-
-        /* ===== น้ำหนัก ===== */
-        const weight = document.getElementById("weight");
-        if (!weight.value || weight.value <= 0) {
-            weight.classList.add("input-error");
-            valid = false;
-        }
-
-        /* ===== จำนวน ===== */
-        const quantity = document.getElementById("quantity");
-        if (!quantity.value || quantity.value <= 0) {
-            quantity.classList.add("input-error");
-            valid = false;
-        }
-
-        /* ===== ผู้รับผิดชอบ ===== */
-        const staff = document.getElementById("staff");
-        if (!staff.value.trim()) {
-            staff.classList.add("input-error");
-            valid = false;
-        }
-
-        /* ===== ถ้าผ่านทั้งหมด ===== */
-        if (valid) {
-            alert("✅ บันทึกข้อมูลเรียบร้อย");
-            form.submit(); // ส่งข้อมูลจริง
-        } else {
-            alert("⚠️ กรุณากรอกข้อมูลให้ครบถ้วน");
-        }
-
-    });
+    if (validateForm()) {
+      form.submit(); // ส่งจริง
+    }
+  });
 
 });
 
+function validateForm() {
+
+  let valid = true;
+
+  /* ===== ดึง element ===== */
+  const process = document.querySelector('select[name="process_method"]');
+  const receive = document.querySelector('input[name="receive_date"]');
+  const weightBefore = document.querySelector('input[name="weight_before"]');
+  const weightAfter = document.querySelector('input[name="weight_after"]');
+  const role = document.getElementById("role");
+
+  const species = document.querySelector('input[name="species"]:checked');
+  const radioGroup = document.querySelector(".radio-group");
+
+  /* ===== ล้าง error เก่า ===== */
+  clearError(process);
+  clearError(receive);
+  clearError(weightBefore);
+  clearError(weightAfter);
+  clearError(role);
+  radioGroup.classList.remove("input-error");
+
+  /* ===== ตรวจสอบ ===== */
+
+  if (!species) {
+    radioGroup.classList.add("input-error");
+    valid = false;
+  }
+
+  if (!process || !process.value) {
+    showError(process, "เลือกกระบวนการ");
+    valid = false;
+  }
+
+  if (!receive || !receive.value) {
+    showError(receive, "เลือกวันที่รับเข้า");
+    valid = false;
+  }
+
+  if (!weightBefore.value || weightBefore.value <= 0) {
+    showError(weightBefore, "กรอกน้ำหนักก่อนคัด");
+    valid = false;
+  }
+
+  if (!weightAfter.value || weightAfter.value <= 0) {
+    showError(weightAfter, "กรอกน้ำหนักหลังคัด");
+    valid = false;
+  }
+
+  if (!user_id.value.trim()) {
+    showError(user_id, "กรอกชื่อผู้รับผิดชอบ");
+    valid = false;
+  }
+
+  return valid;
+}
+
+/* ===== error style ===== */
+
+function showError(input, message) {
+  if (!input) return;
+
+  input.classList.add("input-error");
+  input.value = "";
+  input.placeholder = message;
+
+  input.addEventListener("input", function clear() {
+    input.classList.remove("input-error");
+    input.placeholder = "";
+    input.removeEventListener("input", clear);
+  });
+}
+
+function clearError(el) {
+  if (!el) return;
+  el.classList.remove("input-error");
+}

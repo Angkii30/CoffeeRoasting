@@ -21,7 +21,7 @@ function validateForm() {
     const receive = document.getElementById("receive_date");
     const weight = document.getElementById("weight");
     const price = document.getElementById("buy_price");
-    const role = document.getElementById("role");
+    const role = document.getElementById("user_id");
 
     const species = document.querySelector('input[name="species"]:checked');
     const radioGroup = document.querySelector(".radio-group");
@@ -63,8 +63,8 @@ function validateForm() {
         valid = false;
     }
 
-    if (role.value.trim() === "") {
-        showError(role, "กรอกชื่อผู้รับผิดชอบ");
+    if (user_id.value.trim() === "") {
+        showError(user_id, "กรอกชื่อผู้รับผิดชอบ");
         valid = false;
     }
 
