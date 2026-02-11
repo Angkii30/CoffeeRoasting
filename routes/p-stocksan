@@ -3,5 +3,103 @@ const router = express.Router();
 const db = require("../db");
 
 
+// ================= GET =================
+router.get("/api/stocksan", (req, res) => {
+
+    const search = req.query.search || "";
+    const date = req.query.date || "";
+
+    let sql = `
+        SELECT 
+        s.san_id,
+        s.species,
+        s.process_method,
+        s.weight_before,   
+        s.weight_after,
+        s.receive_date,
+        s.note,
+        u.username
+
+        FROM stock_san s
+
+        LEFT JOIN user u
+        ON s.user_id = u.user_id
+
+        WHERE 1=1
+    `;
+
+    let params = [];
+
+
+    // 🔍 Search
+    if (search) {
+
+        sql += `
+        AND (
+            s.species LIKE ?
+            OR s.process_method LIKE ?
+            OR s.note LIKE ?
+            OR u.username LIKE ?
+        )
+        `;
+
+        const key = `%${search}%`;
+
+        params.push(key, key, key, key);
+    }
+
+
+    // 📅 Date
+    if (date) {
+
+        sql += `
+        AND DATE(s.receive_date) = ?
+        `;
+
+        params.push(date);
+    }
+
+
+    sql += " ORDER BY s.san_id DESC";
+
+
+    db.query(sql, params, (err, result) => {
+
+        if (err) {
+            console.log(err);
+            return res.status(500).json(err);
+        }
+
+        res.json(result);
+    });
+
+});
+
+
+
+// ================= DELETE =================
+router.delete("/api/stocksan/:id", (req, res) => {
+
+    const id = req.params.id;
+
+    db.query(
+        "DELETE FROM stock_san WHERE san_id = ?",
+        [id],
+        (err, result) => {
+
+            if (err) {
+                console.log(err);
+                return res.status(500).json(err);
+            }
+
+            if (result.affectedRows === 0) {
+                return res.json({ success: false });
+            }
+
+            res.json({ success: true });
+        }
+    );
+});
+
 
 module.exports = router;

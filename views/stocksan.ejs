@@ -34,7 +34,7 @@
                     <button class="btn" onclick="window.location.href='/add_stocksan'">+ เพิ่มรายการ</button>
 
                     <div class="toolbar-right">
-                        <input type="text" placeholder="ค้นหารายการ">
+                        <input type="text" placeholder="ค้นหา สายพันธุ์ / กระบวนการ / ผู้รับผิดชอบ">
 
                         <input type="date">
                     </div>
@@ -45,32 +45,22 @@
                         <tr>
                             <th>สายพันธุ์</th>
                             <th>กระบวนการ</th>
-                            <th>ปริมาณ (กิโลกรัม)</th>
+                            <th>ก่อนคัด (กก.)</th>
+                            <th>หลังคัด (กก.)</th>
                             <th>วันที่รับเข้า</th>
+                            <th>ผู้รับผิดชอบ</th>
                             <th>หมายเหตุ</th>
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>อราบิก้า</td>
-                            <td>washed</td>
-                            <td>0.5</td>
-                            <td>14/01/69</td>
-                            <td></td>
-                            <td class="action-col">
-                                <a href="/edit_stock">
-                                    <img src="Picture/edit.png" alt="แก้ไข" class="edit">
-                                </a>
-                                <img src="Picture/delete.png" alt="ลบ" class="delete" onclick="">
-                            </td>
-                        </tr>
+                        <!-- JS ใส่ข้อมูลตรงนี้ -->
                     </tbody>
                 </table>
 
             </section>
         </main>
-        <script src="../JS/stock.js"></script>
+        <script src="../JS/stocksan.js"></script>
 </body>
 
 </html>

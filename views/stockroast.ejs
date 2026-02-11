@@ -34,7 +34,8 @@
                     <button class="btn" onclick="window.location.href='/add_stockroast'">+ เพิ่มรายการ</button>
 
                     <div class="toolbar-right">
-                        <input type="text" placeholder="ค้นหารายการ">
+                        <input type="text" id="searchInput" placeholder="ค้นหารายการ">
+
 
                         <input type="date">
                     </div>
@@ -46,38 +47,24 @@
                             <th>สายพันธุ์</th>
                             <th>กระบวนการ</th>
                             <th>ระดับการคั่ว</th>
-                            <th>ปริมาณ (กิโลกรัม)</th>
-                            <th>วันที่รับเข้า</th>
-                            <th>อายุหลังคั่ว</th>
-                            <th>สภานะ</th>
-                            <th></th>
+
+                            <th>วันหมดอายุ</th>
+
+                            <th>ขนาดแพ็ค</th>
+                            <th>จำนวนแพ็ค</th>
+                            <th>ผู้รับผิดชอบ</th>
+                            <th>&nbsp;</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>อราบิก้า</td>
-                            <td>honey</td>
-                            <td>คั่วกลาง +</td>
-                            <td>20</td>
-                            <td>14/01/69</td>
-                            <td>4 เดือน</td>
-                            <td>
-                                <!-- รูปไอคอนแจ้งเตือนสถานนะ (เชื่อมกับดาต้า) -->
-                            </td>
-                            <td class="action-col">
-                                <a href="/edit_stock">
-                                    <img src="Picture/edit.png" alt="แก้ไข" class="edit">
-                                </a>
-                                <img src="Picture/delete.png" alt="ลบ" class="delete" onclick="">
-                            </td>
-                        </tr>
-                    </tbody>
+
+                    <tbody id="stockTable"></tbody>
+
                 </table>
 
 
             </section>
         </main>
-        <script src="../JS/stock.js"></script>
+        <script src="../JS/stockroast.js"></script>
 </body>
 
 </html>

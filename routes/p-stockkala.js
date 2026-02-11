@@ -4,45 +4,64 @@ const db = require("../db");
 
 
 // ================= GET =================
-router.get("/api/kala", (req, res) => {
+router.get("/api/stockkala", (req, res) => {
 
     const search = req.query.search || "";
     const date = req.query.date || "";
 
     let sql = `
-        SELECT * FROM stock_kala
+       SELECT 
+            k.kala_id,
+            k.species,
+            k.process_method,
+            k.receive_date,
+            k.weight_before,
+            k.weight_after,
+            k.note,
+            u.username
+        FROM stock_kala k
+
+        LEFT JOIN user u
+        ON k.user_id = u.user_id
+
         WHERE 1=1
     `;
 
     let params = [];
 
-    // ค้นหา text
+
+    // 🔍 Search
     if (search) {
 
         sql += `
             AND (
-                species LIKE ?
-                OR process_method LIKE ?
-                OR note LIKE ?
+                k.species LIKE ?
+                OR k.process_method LIKE ?
+                OR u.username LIKE ?
             )
+
         `;
 
         const key = `%${search}%`;
 
         params.push(key, key, key);
+
     }
 
-    // ค้นหาวันที่
+
+    // 📅 Date
     if (date) {
 
         sql += `
-            AND DATE(receive_date) = ?
+        AND DATE(k.receive_date) = ?
         `;
 
         params.push(date);
     }
 
-    sql += " ORDER BY kala_id DESC";
+
+    sql += " ORDER BY k.kala_id DESC";
+
 
     db.query(sql, params, (err, result) => {
 
@@ -52,28 +71,35 @@ router.get("/api/kala", (req, res) => {
         }
 
         res.json(result);
-
     });
+
 });
 
 
+
 // ================= DELETE =================
-router.delete("/api/kala/:id", (req, res) => {
+router.delete("/api/stockkala/:id", (req, res) => {
 
     const id = req.params.id;
 
     db.query(
-        "DELETE FROM stock_kala WHERE kala_id=?",
+        "DELETE FROM stock_kala WHERE kala_id = ?",
         [id],
-        err => {
+        (err, result) => {
 
-            if (err)
+            if (err) {
+                console.log(err);
                 return res.status(500).json(err);
+            }
+
+            if (result.affectedRows === 0) {
+                return res.json({ success: false });
+            }
 
             res.json({ success: true });
-
         }
     );
 });
+
 
 module.exports = router;

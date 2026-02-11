@@ -35,7 +35,7 @@
 
                     <div class="toolbar-right">
 
-                        <input type="text" id="searchInput" placeholder="ค้นหา สายพันธุ์ / กระบวนการ / หมายเหตุ">
+                        <input type="text" id="searchInput" placeholder="ค้นหา สายพันธุ์ / กระบวนการ / ผู้รับผิดชอบ">
 
                         <input type="date" id="dateInput">
 
@@ -49,22 +49,26 @@
                         <tr>
                             <th>สายพันธุ์</th>
                             <th>กระบวนการ</th>
-                            <th>ปริมาณ (กิโลกรัม)</th>
+                            <th>น้ำหนักก่อน (กก.)</th>
+                            <th>น้ำหนักหลัง (กก.)</th>
                             <th>วันที่รับเข้า</th>
+                            <th>ผู้รับผิดชอบ</th>
                             <th>หมายเหตุ</th>
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
-                    <tbody id="stockTable">
-                    </tbody>
 
+                    <tbody id="stockTable">
+                        <!-- JS จะมาใส่ข้อมูลตรงนี้ -->
+                    </tbody>
                 </table>
+
 
 
 
             </section>
         </main>
-        <script src="../JS/stock.js"></script>
+        <script src="../JS/stockkala.js"></script>
 </body>
 
 </html>

@@ -2,6 +2,24 @@ const express = require("express");
 const router = express.Router();
 const db = require("../db");
 
+// router.get("/add_stockkala", (req, res) => {
+
+//     const sql = "SELECT * FROM stock_cherry";
+
+//     db.query(sql, (err, cherry) => {
+
+//         if (err) {
+//             console.log(err);
+//             return res.send("DB Error");
+//         }
+
+//         res.render("add_stockkala", {
+//             cherry: cherry   // 👈 ส่งเข้า EJS
+//         });
+
+//     });
+
+// });
 
 
 module.exports = router;
