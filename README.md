@@ -45,6 +45,6 @@ Username -- admin Password --1234
 
 Database Schema 
 
-https://teams.microsoft.com/l/message/19:1459c9568a404985abd1c9e49f15bf67@thread.v2/1770825671852?context=%7B%22contextType%22%3A%22chat%22%7D
+https://lucid.app/lucidchart/77fd618e-5f1d-4bbd-921b-22090edca21a/edit?invitationId=inv_b0931665-84a4-4615-b543-5d573640a0c2&page=0_0#
 
 ![alt text](image.png)
