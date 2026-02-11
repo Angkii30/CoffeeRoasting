@@ -13,7 +13,7 @@
     <main class="main">
         <header class="topbar"></header>
 
-        <form action="/add_stock" method="post">
+        <form action="/add_stock" method="post" novalidate>
             <!-- <h2 class="page-title-cr">เพิ่มคลังสินค้า</h2> -->
             <div class="container">
                 <!-- <h2 class="page-title-cr">เพิ่มคลังสินค้า</h2> -->
@@ -51,7 +51,7 @@
                             <div class="field">
                                 <div class="form-row">
                                     <label for="note">แหล่งที่มา :</label>
-                                    <textarea id="source_fram" name="source_fram"></textarea>
+                                    <textarea id="source_farm" name="source_farm"></textarea>
                                 </div>
                             </div>
 
@@ -71,8 +71,8 @@
 
                             <div class="field_t">
                                 <div class="form-row">
-                                    <label for="roast_date">วันที่รับเข้า :</label>
-                                    <input type="date" id="receiv_date" name="receiv_date">
+                                    <label for="receive_date">วันที่รับเข้า :</label>
+                                    <input type="date" id="receive_date" name="receive_date">
                                 </div>
                             </div>
 
@@ -84,17 +84,17 @@
                             </div>
                         </div>
 
-                        <div class="row three">
+                        <!-- <div class="row three">
 
-                            <!-- <div class="field_t">
+                            <div class="field_t">
                                 <div class="form-row">
                                     <label for="roast_date">วันที่รับเข้า :</label>
                                     <input type="date" id="receiv_date" name="receiv_date">
                                 </div>
-                            </div> -->
+                            </div>
 
 
-                            <!-- <div class="field_t">
+                            <div class="field_t">
                                 <div class="form-row">
                                     <label for="weight">ปริมาณ (กิโลกรัม) :</label>
                                     <input type="number" id="weight" name="weight" step="0.01">
@@ -106,15 +106,15 @@
                                     <label for="price">ราคา :</label>
                                     <input type="number" id="buy_price" name="buy_price">
                                 </div>
-                            </div> -->
+                            </div>
 
-                            <!-- <div class="field_t">
+                            <div class="field_t">
                                 <div class="form-row">
                                     <label for="note">ผู้รับผิดชอบ :</label>
                                     <input type="text" id="role" name="role">
                                 </div>
-                            </div> -->
-                        </div>
+                            </div>
+                        </div> -->
 
                         <div class="row">
                             <div class="field">
@@ -139,6 +139,7 @@
                 function savedata() {
                     alert(" บันทึกข้อมูลเรียบร้อย"); history.back();
                 } </script> -->
+        </form>
     </main>
     <script src="../JS/add_stock.js"></script>
 </body>

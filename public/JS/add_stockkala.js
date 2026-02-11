@@ -1,74 +1,65 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    const form = document.querySelector("form");
+  const form = document.querySelector("form");
 
-    form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", function (e) {
 
-        e.preventDefault(); // กันไม่ให้ส่งทันที
+    e.preventDefault();
+    let valid = true;
 
-        let valid = true;
+    // ล้าง error
+    document.querySelectorAll(".input-error, .select-error")
+      .forEach(el => el.classList.remove("input-error", "select-error"));
 
-        // ล้าง error เก่า
-        document.querySelectorAll(".input-error, .select-error")
-            .forEach(el => {
-                el.classList.remove("input-error", "select-error");
-            });
+    /* ===== cherry_id ===== */
+    const cherry = document.querySelector('select[name="cherry_id"]');
+    if (!cherry || !cherry.value) {
+      cherry.classList.add("select-error");
+      valid = false;
+    }
 
-        /* ===== สายพันธุ์ ===== */
-        const species = document.querySelector('input[name="species"]:checked');
-        if (!species) {
-            alert("กรุณาเลือกสายพันธุ์กาแฟ");
-            valid = false;
-        }
+    /* ===== process ===== */
+    const process = document.querySelector('select[name="process_method"]');
+    if (!process.value) {
+      process.classList.add("select-error");
+      valid = false;
+    }
 
-        /* ===== กระบวนการ ===== */
-        const process = document.getElementById("process");
-        if (!process.value) {
-            process.classList.add("select-error");
-            valid = false;
-        }
+    /* ===== วันที่รับเข้า ===== */
+    const receivDate = document.querySelector('input[name="receiv_date"]');
+    if (!receivDate.value) {
+      receivDate.classList.add("input-error");
+      valid = false;
+    }
 
-        /* ===== วันที่คั่ว ===== */
-        const roastDate = document.getElementById("roast_date");
-        if (!roastDate.value) {
-            roastDate.classList.add("input-error");
-            valid = false;
-        }
+    /* ===== น้ำหนักก่อน ===== */
+    const weightBefore = document.querySelector('input[name="weight_before"]');
+    if (!weightBefore.value || weightBefore.value <= 0) {
+      weightBefore.classList.add("input-error");
+      valid = false;
+    }
 
-        /* ===== น้ำหนัก ===== */
-        const weight = document.getElementById("weight");
-        if (!weight.value || weight.value <= 0) {
-            weight.classList.add("input-error");
-            valid = false;
-        }
+    /* ===== น้ำหนักหลัง ===== */
+    const weightAfter = document.querySelector('input[name="weight_after"]');
+    if (!weightAfter.value || weightAfter.value <= 0) {
+      weightAfter.classList.add("input-error");
+      valid = false;
+    }
 
-        /* ===== จำนวน ===== */
-        const quantity = document.getElementById("quantity");
-        if (!quantity.value || quantity.value <= 0) {
-            quantity.classList.add("input-error");
-            valid = false;
-        }
+    /* ===== ผู้รับผิดชอบ ===== */
+    const role = document.getElementById("role");
+    if (!role.value.trim()) {
+      role.classList.add("input-error");
+      valid = false;
+    }
 
-        /* ===== ผู้รับผิดชอบ ===== */
-        const role = document.getElementById("role");
-        if (!role.value.trim()) {
-            role.classList.add("input-error");
-            valid = false;
-        }
+    /* ===== submit ===== */
+    if (valid) {
+      form.submit(); // ส่งจริง
+    } else {
+      alert("⚠️ กรุณากรอกข้อมูลให้ครบถ้วน");
+    }
 
-        /* ===== ถ้าผ่าน ===== */
-        if (valid) {
-            alert("✅ บันทึกข้อมูลเรียบร้อย");
-            form.submit(); // ส่งจริง
-        } else {
-            alert("⚠️ กรุณากรอกข้อมูลให้ครบถ้วน");
-        }
-
-    });
+  });
 
 });
-
-
-
-

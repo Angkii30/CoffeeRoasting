@@ -6,19 +6,19 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
 
         if (validateForm()) {
+            // alert("✅ บันทึกข้อมูลเรียบร้อย");
             form.submit();
         }
     });
 
 });
 
-
 function validateForm() {
 
     let valid = true;
 
-    const source = document.getElementById("source_fram");
-    const receive = document.getElementById("receiv_date");
+    const source = document.getElementById("source_farm");
+    const receive = document.getElementById("receive_date");
     const weight = document.getElementById("weight");
     const price = document.getElementById("buy_price");
     const role = document.getElementById("role");
