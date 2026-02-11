@@ -1,86 +1,126 @@
+document.addEventListener("DOMContentLoaded", loadStock);
+
 document.addEventListener("DOMContentLoaded", () => {
+
   loadStock();
+
+  document
+    .getElementById("searchInput")
+    .addEventListener("input", loadStock);
+
+  document
+    .getElementById("dateFilter")
+    .addEventListener("change", loadStock);
+
 });
 
+
+// =============================
+// โหลดข้อมูล
+// =============================
 function loadStock() {
 
-  fetch("/api/stock_cherry")
+  const search = document.getElementById("searchInput").value;
+  const date = document.getElementById("dateFilter").value;
+
+  let url = `/api/stock?search=${encodeURIComponent(search)}&date=${date}`;
+
+  fetch(url)
     .then(res => res.json())
     .then(data => {
 
-      const tbody = document.querySelector(".stockTable tbody");
+      const table = document.getElementById("stockTableBody");
 
-      tbody.innerHTML = ""; // ล้างข้อมูลเก่า
+      table.innerHTML = "";
 
-      data.forEach(item => {
+      if (data.length === 0) {
 
-        const tr = document.createElement("tr");
+        table.innerHTML = `
+                    <tr>
+                        <td colspan="6" style="text-align:center;">
+                            ไม่พบข้อมูล
+                        </td>
+                    </tr>
+                `;
 
-        tr.innerHTML = `
-                    <td>เชอร์รี่</td>
-                    <td class="qty">${item.weight}</td>
-                    <td>${formatDate(item.receive_date)}</td>
-                    <td>${item.source_farm}</td>
-                    <td>${item.username ?? "-"}</td>
+        return;
+      }
+
+      data.forEach(stock => {
+
+        let date = "-";
+
+        if (stock.receive_date) {
+          const d = new Date(stock.receive_date.replace(" ", "T"));
+
+          date = d.toLocaleDateString("th-TH", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit"
+          });
+        }
+
+
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+                    <td>${stock.species}</td>
+
+                    <td>${stock.source_farm}</td>
+
+                    <td>${stock.weight}</td>
+
+                    <td>${Number(stock.buy_price).toLocaleString()}</td>
+
+                    <td>${Number(stock.total_price).toLocaleString()}</td>
+
+                    <td>${date}</td>
+
+                    <td>${stock.username || "-"}</td>
+                    <td>${stock.note || "-"}</td> 
 
                     <td class="action-col">
-                        <a href="/edit_stock/${item.cherry_id}">
-                            <img src="Picture/edit.png" class="edit">
+
+                        <a href="/edit_stock/${stock.cherry_id}">
+                            <img src="/Picture/edit.png" class="edit">
                         </a>
 
-                        <img src="Picture/delete.png" 
-                             class="delete"
-                             onclick="deleteStock(${item.cherry_id})">
+                        <img src="/Picture/delete.png"
+                            class="delete"
+                            onclick="deleteStock(${stock.cherry_id})">
                     </td>
                 `;
 
-        tbody.appendChild(tr);
+        table.appendChild(row);
+
       });
 
     })
     .catch(err => console.error(err));
 }
 
-function formatDate(dateStr) {
 
-  const date = new Date(dateStr);
 
-  return date.toLocaleDateString("th-TH", {
-    year: "2-digit",
-    month: "2-digit",
-    day: "2-digit"
-  });
-}
+// =============================
+// ลบ
+// =============================
 function deleteStock(id) {
 
   if (!confirm("ต้องการลบข้อมูลนี้หรือไม่?")) return;
 
-  fetch(`/api/stock_cherry/${id}`, {
+  fetch(`/api/stock/${id}`, {
     method: "DELETE"
   })
     .then(res => res.json())
     .then(data => {
 
       if (data.success) {
+
         alert("ลบเรียบร้อย");
-        loadStock(); // โหลดใหม่
+        loadStock();
       }
 
-    });
+    })
+    .catch(err => console.error(err));
 }
-const searchInput = document.getElementById("searchInput");
-
-searchInput.addEventListener("keyup", function () {
-
-  const value = this.value.toLowerCase();
-  const rows = document.querySelectorAll(".stockTable tbody tr");
-
-  rows.forEach(row => {
-
-    const text = row.textContent.toLowerCase();
-
-    row.style.display = text.includes(value)
-      ? ""
-      : "none";
-  });
-});

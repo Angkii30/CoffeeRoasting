@@ -8,7 +8,7 @@ router.get("/api/cus", (req, res) => {
     const date = req.query.date || "";
 
     let sql = `
-        SELECT * FROM customer
+        SELECT * FROM customer 
         WHERE 1=1
     `;
 

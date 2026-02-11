@@ -34,10 +34,14 @@
                     <button class="btn" onclick="window.location.href='/add_stockkala'">+ เพิ่มรายการ</button>
 
                     <div class="toolbar-right">
-                        <input type="text" placeholder="ค้นหารายการ">
 
-                        <input type="date">
+                        <input type="text" id="searchInput" placeholder="ค้นหา สายพันธุ์ / กระบวนการ / หมายเหตุ">
+
+                        <input type="date" id="dateInput">
+
                     </div>
+
+
                 </div>
 
                 <table>
@@ -51,21 +55,9 @@
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>อราบิก้า</td>
-                            <td>washed</td>
-                            <td>0.5</td>
-                            <td>14/01/69</td>
-                            <td></td>
-                            <td class="action-col">
-                                <a href="/edit_stock">
-                                    <img src="Picture/edit.png" alt="แก้ไข" class="edit">
-                                </a>
-                                <img src="Picture/delete.png" alt="ลบ" class="delete" onclick="">
-                            </td>
-                        </tr>
+                    <tbody id="stockTable">
                     </tbody>
+
                 </table>
 
 
