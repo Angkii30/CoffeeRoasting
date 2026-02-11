@@ -1,3 +1,10 @@
+// ฟังก์ชัน logout สำหรับ sidebar
+function logout() {
+    if (confirm('คุณต้องการออกจากระบบหรือไม่?')) {
+        // สามารถเพิ่มลบ session/cookie ที่นี่ถ้ามี
+        window.location.href = '/login';
+    }
+}
 
 async function login() {
 
